@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      if categories.length > 0
+        each cat in categories
+          .panel.panel-default
+            .panel-heading
+              h3 
+                a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
+            .panel-body
+              if cat.cars && cat.cars.length > 0
+                each item in cat.cars
+                  .col-md-2
+                    .thumbnail
+                      a(href='/car/#{item._id}')
+                        if item.poster.indexOf('http:')>-1
+                          img(src='#{item.poster}',alt='item.title')
+                        else
+                          img(src='/upload/#{item.poster}',alt='item.title')
+                      .caption
+                        h3 #{item.title}
+                        p: a.btn.btn-primary(href='/car/#{item._id}',role='button')
+                          观看预告片！
+
+

@@ -1,0 +1,17 @@
+extends ../adminlayout
+block content
+  .container
+    .row
+      form.form-horizontal(method="post",action="/admin/upload/new",enctype="multipart/form-data")
+        //- hiden input??? pass the value
+
+        .form-group
+          label.col-sm-2.control-label(for="uploadPoster") 封面
+          div.col-sm-10
+            input#uploadPoster(type="file", name="uploadPoster")
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type="submit") 录入
+  script(src="/assets/js/main.js")
+  script.
+    $(".navbar-fixed-bottom").hide();

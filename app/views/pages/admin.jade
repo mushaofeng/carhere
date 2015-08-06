@@ -1,0 +1,52 @@
+extends ../adminlayout
+block content
+
+      form.form-horizontal(method="post",action="/admin/car/new",enctype="application/x-www-form-urlencoded")
+        //- hiden input??? pass the value
+        if car._id
+          input(type="hidden", name="car[_id]", value=car._id)
+
+        .form-group
+          label.col-sm-2.control-label(for="name") 汽车名
+          div.col-sm-10
+            input#name.form-control(type="text", name="car[name]", value=car.name)
+        .form-group
+          label.col-sm-2.control-label(for="cover") 封面地址
+          div.col-sm-10
+            input#cover.form-control(type="text", name="car[cover]", value=car.cover)
+        .form-group
+          label.col-sm-2.control-label(for="type") 汽车型号
+          div.col-sm-10
+            input#type.form-control(type="text", name="car[type]", value=car.type)
+        .form-group
+          label.col-sm-2.control-label(for="price") 售卖价格
+          div.col-sm-10
+            input#price.form-control(type="price", name="car[price]", value=car.price)
+        .form-group
+          label.col-sm-2.control-label(for="price_off") 折扣价
+          div.col-sm-10
+            input#price_off.form-control(type="text", name="car[price_off]", value=car.price_off)
+        .form-group
+          label.col-sm-2.control-label(for="price_4s") 4S店价格
+          div.col-sm-10
+            input#price_4s.form-control(type="text", name="car[price_4s]", value=car.price_4s)
+        .form-group
+          label.col-sm-2.control-label(for="sell_num") 售卖数量
+          div.col-sm-10
+            input#sell_num.form-control(type="text", name="car[sell_num]", value=car.sell_num)
+        .form-group
+          label.col-sm-2.control-label(for="reserve") 库存数
+          div.col-sm-10
+            input#reserve.form-control(type="text", name="car[reserve]", value=car.reserve)               
+        .form-group
+          label.col-sm-2.control-label(for="year") 生产年份
+          div.col-sm-10
+            input#year.form-control(type="text", name="car[year]", value=car.year)              
+        .form-group
+          label.col-sm-2.control-label(for="summary") 简介
+          div.col-sm-10
+            input#summary.form-control(type="text", name="car[summary]", value=car.summary)
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type="submit") 录入
+  script(src="/assets/js/main.js")

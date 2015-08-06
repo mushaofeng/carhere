@@ -1,0 +1,23 @@
+extends ../layout
+block content
+  .container
+    .row
+      dl.dl-horizontal
+        dt 汽车名
+        dd=car.name
+        dt   汽车型号
+        dd=car.type
+        dt   售卖价格
+        dd=car.price
+        dt   折扣价
+        dd=car.price_off
+        dt 4S店价格
+        dd=car.price_4s
+        dt   售卖数量
+        dd=car.sell_num
+        dt   生产年份
+        dd=car.year
+        dt   简介
+        dd=car.summary
+      img(src="#{car.cover}")                 
+  script(src="/assets/js/detail.js") 

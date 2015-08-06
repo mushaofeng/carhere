@@ -1,0 +1,25 @@
+extends ../adminlayout
+block content
+
+      form.form-horizontal(method="post",action="/admin/tags/new",enctype="application/x-www-form-urlencoded")
+        //- hiden input??? pass the value
+        if tags._id
+          input(type="hidden", name="tags[_id]", value=tags._id)
+
+        .form-group
+          label.col-sm-2.control-label(for="name") 标签名
+          div.col-sm-10
+            input#name.form-control(type="text", name="tags[name]", value=tags.name)
+        .form-group
+          label.col-sm-2.control-label(for="order") 序号
+          div.col-sm-10
+            input#order.form-control(type="text", name="tags[order]", value=tags.order)
+        .form-group
+          label.col-sm-2.control-label(for="show") 是否显示
+          div.col-sm-10
+            //- span &nbsp;&nbsp;&nbsp;&nbsp;是 &nbsp;&nbsp;&nbsp;&nbsp;
+            input#show(type="text", name="tags[show]", value=tags.show)                       
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type="submit") 录入
+  script(src="/assets/js/main.js")

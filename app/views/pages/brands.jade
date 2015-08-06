@@ -1,0 +1,24 @@
+extends ../adminlayout
+block content
+
+      form.form-horizontal(method="post",action="/admin/brands/new",enctype="application/x-www-form-urlencoded")
+        //- hiden input??? pass the value
+        if brands._id
+          input(type="hidden", name="brands[_id]", value=brands._id)
+
+        .form-group
+          label.col-sm-2.control-label(for="name") 品牌名
+          div.col-sm-10
+            input#name.form-control(type="text", name="brands[name]", value=brands.name)
+        .form-group
+          label.col-sm-2.control-label(for="logoUrl") logo地址
+          div.col-sm-10
+            input#logoUrl.form-control(type="text", name="brands[logoUrl]", value=brands.logoUrl)
+        .form-group
+          label.col-sm-2.control-label(for="order") 序号
+          div.col-sm-10
+            input#order.form-control(type="text", name="brands[order]", value=brands.order)
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type="submit") 录入
+  script(src="/assets/js/main.js")
