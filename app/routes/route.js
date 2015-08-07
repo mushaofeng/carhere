@@ -41,24 +41,24 @@ module.exports = function(app){
 	//-- Car 
 	// app.get('/list',CarController.list);
 	app.get('/car/:id',CarController.detail);
-	app.get('/admin/car/list',CarController.list);
-	app.get('/admin/car',CarController.new);
-	app.post('/admin/car/new',CarController.saveNew)
-	app.get('/admin/car/update/:id',CarController.update);
+	app.get('/admin/car/list',UserController.signinRequired, UserController.adminRequired,CarController.list);
+	app.get('/admin/car',UserController.signinRequired, UserController.adminRequired,CarController.new);
+	app.post('/admin/car/new',UserController.signinRequired, UserController.adminRequired,CarController.saveNew)
+	app.get('/admin/car/update/:id',UserController.signinRequired, UserController.adminRequired,CarController.update);
 	// app.delete('/admin/car/list',UserController.signinRequired, UserController.adminRequired,CarController.del);
 
 	// app.get('/api/car',CarController.api.car);	
 	// //upload
-	app.get('/admin/upload',UploadController.new);
-	app.get('/admin/upload/list',UploadController.list);
-	app.post('/admin/upload/new',UploadController.saveUpload);
-	// //-- USER
-	// app.post('/user/signup',UserController.signup);
-	// app.post('/user/signin',UserController.signin);
-	// app.get('/admin/userList', UserController.signinRequired, UserController.adminRequired, UserController.userList);
-	// app.get('/logout',UserController.logout);
-	// app.get('/signin',UserController.showSignin);
-	// app.get('/signup',UserController.showSignup);
+	app.get('/admin/upload',UserController.signinRequired, UserController.adminRequired,UploadController.new);
+	app.get('/admin/upload/list',UserController.signinRequired, UserController.adminRequired,UploadController.list);
+	app.post('/admin/upload/new',UserController.signinRequired, UserController.adminRequired,UploadController.saveUpload);
+	// //-- USER  
+	app.post('/user/signup',UserController.signup);
+	app.post('/user/signin',UserController.signin);
+	app.get('/admin/userList', UserController.signinRequired, UserController.adminRequired, UserController.userList);
+	app.get('/logout',UserController.logout);
+	app.get('/signin',UserController.showSignin);
+	app.get('/signup',UserController.signinRequired, UserController.adminRequired,UserController.showSignup);
 	// // Comments
 	// app.post('/admin/comment',UserController.signinRequired,CommentController.save);
 
@@ -69,16 +69,16 @@ module.exports = function(app){
 	// // pagination
 	// app.get('/results',IndexController.search); 
 	// BrandsController
-	app.get('/admin/brands/list',BrandsController.list);
-	app.get('/admin/brands',BrandsController.new);
-	app.post('/admin/brands/new',BrandsController.saveNew)
-	app.get('/admin/brands/update/:id',BrandsController.update);
+	app.get('/admin/brands/list',UserController.signinRequired, UserController.adminRequired,BrandsController.list);
+	app.get('/admin/brands',UserController.signinRequired, UserController.adminRequired,BrandsController.new);
+	app.post('/admin/brands/new',UserController.signinRequired, UserController.adminRequired,BrandsController.saveNew)
+	app.get('/admin/brands/update/:id',UserController.signinRequired, UserController.adminRequired,BrandsController.update);
 	
 	// 标签 
-	app.get('/admin/tags/list',TagsController.list);
-	app.get('/admin/tags',TagsController.new);
-	app.post('/admin/tags/new',TagsController.saveNew)
-	app.get('/admin/tags/update/:id',TagsController.update);
+	app.get('/admin/tags/list',UserController.signinRequired, UserController.adminRequired,TagsController.list);
+	app.get('/admin/tags',UserController.signinRequired, UserController.adminRequired,TagsController.new);
+	app.post('/admin/tags/new',UserController.signinRequired, UserController.adminRequired,TagsController.saveNew)
+	app.get('/admin/tags/update/:id',UserController.signinRequired, UserController.adminRequired,TagsController.update);
 
 };
 

@@ -48,13 +48,17 @@ exports.signin = function(req,res){
 				}
 				if(isMatch){
 					req.session.user = user;
-					return res.redirect('/');
+					if(user.role=111){
+						return res.redirect('/admin/brands');
+					}else if(user.role==11){
+						return res.redirect('/admin/car');
+					}else{
+						return res.redirect('/');
+					}
 				} else{
 					res.redirect('/signin');
 					console.log('Wrong Password!');
 				}
-
-
 			});
 			// console.log(user);
 		 //    var isVaild = user.comparePassword(password);
@@ -69,13 +73,16 @@ exports.signin = function(req,res){
 	};
 	//-- User List 
 exports.userList = function(req,res){
+		var user = req.session.user;
+		console.log( user.role );
 		User.fetch(function(err,users){
 			if(err){
 				console.log(err);
 			}
 			res.render('userList',{
 				title:'User 列表',
-				users:users
+				users:users,
+				user:user
 			})
 
 
