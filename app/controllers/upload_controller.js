@@ -34,19 +34,34 @@ exports.saveUpload = function(req,res,next){
 
 };
 exports.new = function  (req,res,next) {
-			res.render('upload',{
-				title:'图片上传',
-			});	
-	// body...
+	res.render('upload',{
+		title:'图片上传',
+	});	
 }
 exports.list=function  (req,res,next) {
-	Upload.fetch(function  (err,uploads) {
+	var start = req.query.start||1,
+			size = req.query.size||10;
+	Upload.page(start,size,function  (err,uploads) {
 		if(err){
 			console.log( err );
 		}
-		res.render('uploadlist',{
-			title:'上传图片列表',
-			uploads:uploads
-		})
+		Upload.count(function  (err,cnt) {
+			//to 传递URL
+			// delete req.query.start;
+			// delete req.query.size;
+			var _page=_.extend(req.query,{
+					total:cnt,
+					start:start,
+					size:size,
+					cur:Math.floor(start/size),
+					num:Math.ceil(cnt/size)
+				})
+			res.render('uploadlist',{
+				title:'上传图片列表',
+				uploads:uploads,
+				page:_page
+			})			
+		});		
+
 	})
 }

@@ -4,9 +4,10 @@ html
     meta(charset='utf-8')
     title #{title}
     include ./includes/head
+    link(href='/assets/build/admin.css',rel='stylesheet')
   body
     include ./includes/header
-    
+   
     .container
       .row
         .col-md-2
@@ -15,3 +16,4 @@ html
           block content
     include ./includes/footer
   include ./includes/foot
+  block bottom

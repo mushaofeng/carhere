@@ -1,0 +1,9 @@
+mixin pageBlock(url,page)
+  nav
+    ul.pagination
+      //- li: a(hrf="#",aria-label="Previous"): span(aria-hidden="true") &laquo;
+      - for(var i=0;i<page.num;i++)
+        if page.cur==i
+          li.active: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}
+        else
+          li: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}           

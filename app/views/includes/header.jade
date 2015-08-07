@@ -1,3 +1,23 @@
+header.topNav
+  div.bottom-header
+    div.container
+      a.navbar-brand.animated.bounceInRight(href="#")
+        span.logo
+          img(src="/assets/images/logo.png")  
+          span.phone 400-12345678
+      nav.navbar(role="navigation")
+        ul#menu-main-menu.nav.navbar-nav.pull-right
+          li.menu-item.active
+            a(href="/") 首页
+          li.menu-item
+            a(href="/") 豪华超跑 
+          li.menu-item
+            a(href="/") 贷款购车 
+          li.menu-item
+            a(href="/") 体验中心      
+          li.menu-item
+            a(href="/") 关于我们                                            
+      div.header_shadow
 .container
   .row
     .page-header.clearfix
@@ -31,7 +51,7 @@
         .modal-header 注册
         .modal-body
           .form-group
-            label(for="signupName")用户名
+            label(for="signupName") 用户名
             input#signupName.form-control(name="user[name]",type="text")
           .form-group
             label(for="signupPassword") 密码
@@ -46,7 +66,7 @@
         .modal-header 登录
         .modal-body
           .form-group
-            label(for="signinName")用户名
+            label(for="signinName") 用户名
             input#signinName.form-control(name="user[name]",type="text")
           .form-group
             label(for="signinPassword") 密码

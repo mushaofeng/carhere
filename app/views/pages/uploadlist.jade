@@ -1,16 +1,28 @@
 extends ../adminlayout
+include ../includes/mixin
 block content
-      table.table.table-hover.table-striped
-        thead
-          tr
-            th 图片
-            th 文件名
-            th 复制地址
-        tbody
-          each item in uploads
-            tr(class="item-id-#{item._id}")
-              td: img(src="#{item.path}",width=100,height=100) 
-              td #{item.path}
-              td: button.btn.btn-primary.clip_board(data-clip=item.path)  复制
+  table.table.table-hover.table-striped
+    thead
+      tr
+        th 图片
+        th 文件名
+        th 复制地址
+    tbody
+      each item in uploads
+        tr(class="item-id-#{item._id}")
+          td: img(src="#{item.path}",width=100,height=100) 
+          td #{item.path}
+          td: button.btn.btn-primary.clip_board(data-clip=item.path)  复制
+  +pageBlock("/admin/upload/list?",page)
+  //-nav
+    ul.pagination
+      //- li: a(hrf="#",aria-label="Previous"): span(aria-hidden="true") &laquo;
+      - for(var i=0;i<page.num;i++)
+        if page.cur==i
+          li.active: a(href="/admin/upload/list?start=#{page.size*i}&size="+page.size) #{i+1}
+        else
+          li: a(href="/admin/upload/list?start=#{page.size*i}&size="+page.size) #{i+1}
 
-  script(src="/assets/js/main.js")                  
+      //- li: a(hrf="#",aria-label="Next"): span(aria-hidden="true") &raquo;             
+block bottom  
+  script(src="/assets/js/main.js")

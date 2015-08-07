@@ -50,7 +50,10 @@ module.exports = function(grunt){
 				},
 			
 				files:{
-					'public/build/index.css':'public/assets/css/index.less'
+					'public/build/g.css':'public/assets/css/g.less',
+					'public/build/index.css':'public/assets/css/index.less',
+					'public/build/admin.css':'public/assets/css/admin.less'
+
 				}
 			}
 		},
