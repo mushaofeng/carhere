@@ -25,7 +25,7 @@ exports.saveUpload = function(req,res,next){
 				})
 				_upload.save(function  (err,upload) {
 					console.log(upload  );
-					res.redirect('/admin/upload/list');
+					res.redirect('/admin/upload');
 				})
 			});
 

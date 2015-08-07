@@ -5,9 +5,12 @@ block content
           tr
             th 图片
             th 文件名
+            th 复制地址
         tbody
           each item in uploads
             tr(class="item-id-#{item._id}")
               td: img(src="#{item.path}",width=100,height=100) 
               td #{item.path}
+              td: button.btn.btn-primary.clip_board(data-clip=item.path)  复制
+
   script(src="/assets/js/main.js")                  

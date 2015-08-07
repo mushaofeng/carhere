@@ -57,13 +57,28 @@ exports.saveNew = function(req,res){
 		//console.log(req.body.movie);
 		//bodyParser extended = true  -> is the key !!!
 		var brandsObj = req.body.brands;
-		var _brands = new Brands(brandsObj);
-		_brands.save(function(err,brands){
-			if(err){
-				console.log(err);
-			}
-			res.redirect('/admin/brands');
-		});
+		var id=brandsObj._id;
+		var _brands
+		if(id){
+			Brands.findById(id,function  (err,brand) {
+				_brands=_.extend(brand,brandsObj);
+				_brands.save(function  () {
+					if(err){
+						console.log(err);
+					}
+					res.redirect('/admin/brands/list');					
+				})
+			})			
+		}else{
+			_brands = new Brands(brandsObj);
+			_brands.save(function(err,brands){
+				if(err){
+					console.log(err);
+				}
+				res.redirect('/admin/brands');
+			});
+		}
+
 
 
 };
