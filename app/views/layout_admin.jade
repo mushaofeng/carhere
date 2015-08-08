@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title #{title}
+    include ./includes/head
+    link(href='/assets/build/admin.css',rel='stylesheet')
+  body
+    include ./includes/header_admin
+   
+    .container
+      .row
+        .col-md-2
+          include ./includes/sidebar      	
+        .col-md-9
+          block content
+    include ./includes/footer
+  include ./includes/foot
+  block bottom

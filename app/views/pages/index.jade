@@ -1,7 +1,29 @@
 extends ../layout
-
+block head
+  link(href='/build/libs/flexslider.css',rel='stylesheet')  
+  link(href='/build/index.css',rel='stylesheet')
 block content
-  .container
+  .flexslider
+    ul.slides
+      - for item in banner
+        li: img(src=item.url)
+    .slider-box
+      .row-box
+        .title-box
+          h3: i.fa.fa-fw.fa-clock-o 100%划算
+        .content-box
+          p 保证比直接到4S店购车划算
+      .row-box
+        .title-box
+          h3: i.fa.fa-fw.fa-map-marker 服务保障
+        .content-box
+          p 不买车随时退款
+      .row-box
+        .title-box
+          h3: i.fa.fa-fw.fa-phone 限时限量
+        .content-box
+          p.tlg 限时特卖，限量抢购
+  //-.container
     .row
       if categories.length > 0
         each cat in categories

@@ -6,15 +6,17 @@ var multipart = require('connect-multiparty');
 var multiMid = multipart();
 
 
+//前台
+var IndexController = require('../controllers/index_controller.js');
+
+//CMS
+var BannerController = require('../controllers/banner_controller.js');
+
 //后端数据 
 var BrandsController = require('../controllers/brands_controller.js');
 var TagsController = require('../controllers/tags_controller.js');
 var CarController = require('../controllers/car_controller.js');
-
-// Controllers
-var IndexController = require('../controllers/index_controller.js');
 var UserController = require('../controllers/user_controller.js');
-
 var CommentController = require('../controllers/comment_controller.js');
 var CategoryController = require('../controllers/category_controller.js');
 var UploadController = require('../controllers/upload_controller.js');
@@ -35,10 +37,16 @@ module.exports = function(app){
 	//#######
 	// routes 
 	//#######
-	//-- INDEX
+	//-- INDEX  网站页面
 	app.get('/',IndexController.index);
 
-	//-- Car 
+	// CMS 页面
+	app.get('/cms/banner/list',UserController.signinRequired, UserController.adminRequired,BannerController.list);
+	app.get('/cms/banner',UserController.signinRequired, UserController.adminRequired,BannerController.new);
+	app.post('/cms/banner/new',UserController.signinRequired, UserController.adminRequired,BannerController.saveNew)
+	app.get('/cms/banner/update/:id',UserController.signinRequired, UserController.adminRequired,BannerController.update);
+	
+	//-- Admin  后台数据管理
 	// app.get('/list',CarController.list);
 	app.get('/car/:id',CarController.detail);
 	app.get('/admin/car/list',UserController.signinRequired, UserController.adminRequired,CarController.list);
@@ -48,7 +56,7 @@ module.exports = function(app){
 	// app.delete('/admin/car/list',UserController.signinRequired, UserController.adminRequired,CarController.del);
 
 	// app.get('/api/car',CarController.api.car);	
-	// //upload
+	// 上传页面
 	app.get('/admin/upload',UserController.signinRequired, UserController.adminRequired,UploadController.new);
 	app.get('/admin/upload/list',UserController.signinRequired, UserController.adminRequired,UploadController.list);
 	app.post('/admin/upload/new',UserController.signinRequired, UserController.adminRequired,UploadController.saveUpload);

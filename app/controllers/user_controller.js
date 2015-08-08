@@ -36,7 +36,6 @@ exports.signin = function(req,res){
 			.exec(function(err,user){
 			if(err){
 				console.log(err);
-				console.log('001');
 			}
 			if(!user){
 				return res.redirect('/signup');
@@ -48,9 +47,9 @@ exports.signin = function(req,res){
 				}
 				if(isMatch){
 					req.session.user = user;
-					if(user.role=111){
+					if(user.role === 111){
 						return res.redirect('/admin/brands');
-					}else if(user.role==11){
+					}else if(user.role === 11){
 						return res.redirect('/admin/car');
 					}else{
 						return res.redirect('/');
@@ -79,7 +78,7 @@ exports.userList = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('userList',{
+			res.render('admin/userList',{
 				title:'User 列表',
 				users:users,
 				user:user
@@ -97,13 +96,13 @@ exports.logout = function(req,res){
 
 	};
 exports.showSignin = function(req,res){
-	res.render('signin',{
+	res.render('admin/signin',{
 		title:'登录页面'
 	});
  }
 
 exports.showSignup = function(req,res){
-	res.render('signup',{
+	res.render('admin/signup',{
 		title:'注册页面'
 	});
 

@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
-
-var UploadSchema = new Schema({
-	name:String,
-	path:String,
+var BannerSchema = new Schema({
+	link:String,//链接地址
+	url:String,//banner图片地址
+	order:Number,//排序
+	status:Number,//状态 是否显示
 	meta:{
 		createAt:{
 			type:Date,
@@ -20,7 +21,7 @@ var UploadSchema = new Schema({
 });
 
 // Middleware!
-UploadSchema.pre('save',function(next){
+BannerSchema.pre('save',function(next){
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{
@@ -32,24 +33,16 @@ UploadSchema.pre('save',function(next){
 
 });
 // statics 
-UploadSchema.statics = {
+BannerSchema.statics = {
 	fetch: function(cb){
 		return this.find({}).sort({_id:-1}).exec(cb);
-
-	},
-	count:function  (cb) {
-		return this.find().count().exec(cb);
-	},
-	page: function  (start,size,cb) {
-		var start=start||0,
-				size=size||10;
-		return this.find({}).sort({_id:-1}).skip(start).limit(size).exec(cb);
 	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
+
 	}
 
 };
 
-module.exports = mongoose.model('Upload',UploadSchema);
+module.exports = mongoose.model('Banner',BannerSchema);
 

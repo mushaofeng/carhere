@@ -8,7 +8,7 @@ exports.list = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('brands_list',{
+			res.render('admin/brands_list',{
 				title:'Cat 列表',
 				brands:brands
 			})
@@ -21,7 +21,7 @@ exports.list = function(req,res){
 exports.new = function(req,res){
 		
 
-		res.render('brands',{
+		res.render('admin/brands',{
 			title:'汽车品牌',
 			brands:{
 			// 	// director:'hihi',
@@ -45,7 +45,7 @@ exports.new = function(req,res){
 // 				if(err){
 // 					console.log(err);
 // 				}
-// 				res.render('admin',{
+// 				res.render('admin/admin',{
 // 					title:'Moive 后台',
 // 					movie:movie
 // 				});
@@ -89,7 +89,7 @@ exports.update = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('brands',{
+			res.render('admin/brands',{
 				title:'品牌 修改',
 				brands:brands
 			});
@@ -112,7 +112,7 @@ exports.update = function(req,res){
 // 				.exec(function(err,comments){
 					
 // 					console.log(66666+JSON.stringify(comments));
-// 					res.render('detail',{
+// 					res.render('admin/detail',{
 // 						title:'Car Detail',
 // 						movie:movie,
 // 						comments:comments

@@ -39,7 +39,7 @@ exports.list = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('list',{
+			res.render('admin/list',{
 				title:'Car 列表',
 				cars:cars
 			})
@@ -53,7 +53,7 @@ exports.new = function(req,res){
 		Category.find({})
 		.exec(function(err,categories){
 
-			res.render('admin',{
+			res.render('admin/admin',{
 				title:'汽车 后台录入',
 				car:{},
 				categories:categories
@@ -70,7 +70,7 @@ exports.update = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('admin',{
+			res.render('admin/admin',{
 				title:'Car 修改',
 				car:car
 			});
@@ -82,7 +82,7 @@ exports.update = function(req,res){
 		// 			if(err){
 		// 				console.log(err);
 		// 			}
-		// 			res.render('admin',{
+		// 			res.render('admin/admin',{
 		// 				title:'Car 修改',
 		// 				car:car,
 		// 				categories:categories
@@ -204,7 +204,7 @@ exports.detail = function(req,res){
 			// console.log('1111     '+car.title);
 			// var carTitle ='Car '+ car.title || '';
 			// Comments
-			res.render('detail',{
+			res.render('admin/detail',{
 				title:'Car 详情',
 				car:car
 			});			
@@ -214,7 +214,7 @@ exports.detail = function(req,res){
 				// .exec(function(err,comments){
 					
 				// 	console.log(66666+JSON.stringify(comments));
-				// 	res.render('detail',{
+				// 	res.render('admin/detail',{
 				// 		title:'Car Detail',
 				// 		car:car,
 				// 		comments:comments

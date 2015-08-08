@@ -2,9 +2,9 @@ define('g',['widget/animate'],function  (Animate) {
 	var G={};
 	function navInit () {
     	if($(document).scrollTop()>50){
-    		$(".topNav").addClass("nav-fixed");
+    		$('.topNav').addClass('nav-fixed');
     	}else{
-    		$(".topNav").removeClass("nav-fixed");
+    		$('.topNav').removeClass('nav-fixed');
     	}		
 	}
 	function clipboard (argument) {
@@ -12,13 +12,12 @@ define('g',['widget/animate'],function  (Animate) {
 		var client = new ZeroClipboard( $('.clip_board') );
 		client.on( 'copy',function( event ) {
 				var clipboard = event.clipboardData;
-				console.log( $(event.target).data('clip')  );
 				clipboard.setData( 'text/plain', $(event.target).data('clip') );
 		});	
 	}
     G.init = function  () {
 		Animate();
-		clipboard
+		clipboard();
 	    $(window).scroll(function  () {
 	    	Animate();
 	    	navInit();
