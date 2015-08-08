@@ -9,7 +9,7 @@ exports.list = function(req,res){
 				console.log(err);
 			}
 			res.render('admin/tags_list',{
-				title:'Cat 列表',
+				title:'标签列表',
 				tags:tags
 			})
 
@@ -22,7 +22,7 @@ exports.new = function(req,res){
 		
 
 		res.render('admin/tags',{
-			title:'汽车品牌',
+			title:'标签',
 			tags:{
 			// 	// director:'hihi',
 			// 	// title:'hoho',
@@ -87,7 +87,7 @@ exports.update = function(req,res){
 				console.log(err);
 			}
 			res.render('admin/tags',{
-				title:'品牌 修改',
+				title:'标签 修改',
 				tags:tags
 			});
 		});		
@@ -125,7 +125,6 @@ exports.update = function(req,res){
 
 exports.del = function(req,res){
 		var id = req.query.id;
-		console.log('hahha '+id);
 		if(id){
 			Car.remove({_id:id},function(err,movie){
 				if(err){
