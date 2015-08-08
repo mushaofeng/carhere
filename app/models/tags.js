@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 var TagsSchema = new Schema({
 	name:String,//标签名
+	// code:String,//编码
 	order:Number,//排序
 	show:Number,
 	meta:{

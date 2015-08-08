@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 var BrandsSchema = new Schema({
 	name:String,//品牌名
+	code:String,//编码
 	logoUrl:String,//logo 图片地址
 	order:Number,//排序
 	meta:{

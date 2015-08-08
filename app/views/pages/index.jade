@@ -1,4 +1,5 @@
 extends ../layout
+include ../includes/mixin
 block head
   link(href='/build/libs/flexslider.css',rel='stylesheet')  
   link(href='/build/index.css',rel='stylesheet')
@@ -23,6 +24,58 @@ block content
           h3: i.fa.fa-fw.fa-phone 限时限量
         .content-box
           p.tlg 限时特卖，限量抢购
+  .brand-wrap
+    .container
+      .row
+        ul.brand-list
+          - for brand in brands
+            li
+              a(target='_blank', href='www.baidu.com')
+                img(src='#{brand.logoUrl}', height='36')        
+    .brand-shadow   
+  .top-wrap
+    .container
+      .row
+        .span8.offset2
+          .section-header
+            .animated.bounceInRight.logo-car
+              img(src='/assets/images/logo/logo-sub1.png')
+            .heading-wrap
+              h2.heading
+                span 销售排行
+      .row
+        .col-xs-12.col-sm-6.col-lg-6
+          article
+            ul.nav.nav-tabs
+              - each car , index  in top
+                li
+                  a(href='#tab#{index}', data-toggle='tab', aria-expanded='false')
+                    i.rank-num #{index}
+                    strong #{car.name}
+                    | #{car.summary}
+               
+        .tab-content.col-xs-12.col-sm-6.col-lg-6
+          - each car,index in top
+            .tab-pane(id='tab#{index}')
+              article.clearfix.animated.text-left.animation-done
+                a(href='/car/#{car._id}', target='_blank')
+                  img.img-responsive(src='#{car.cover_l}')
+  .recent-car
+    .container
+      .recent-car-content
+        .row
+          .span8.offset2
+            .section-header
+              .animated.bounceInRight.logo-car
+                img(src='/assets/images/logo/logo-sub1.png')
+              .heading-wrap
+                h2.heading
+                  span 热门推荐
+        |                             
+        .row
+          - each car,index in top
+            .col-md-4
+              +carItem(car)  
   //-.container
     .row
       if categories.length > 0

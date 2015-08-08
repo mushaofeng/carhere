@@ -4,4 +4,9 @@ require(['g','libs/jquery.flexslider'], function(G,Slider) {
         animation: "slide"
     });	
 	// alert(1111);
+  $('.nav-tabs a:first').tab('show');
+	$('.nav-tabs a').bind('mouseenter',function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	})	
 });

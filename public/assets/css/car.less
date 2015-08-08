@@ -1,0 +1,103 @@
+.recent-car {
+  margin-top: 100px;
+  padding-bottom: 30px;
+}
+.car-details {
+  text-align: left;
+  h4 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }  
+  span {
+    font-size: 17px;
+    font-weight: 700;
+    color: #18428c;
+  }  
+  .line-dec {
+    margin-top: 15px;
+    width: 40px;
+    height: 2px;
+    background-color: #eeeeee;
+  }  
+  p {
+    margin-top: 20px;
+  }
+  ul {
+    padding: 20px 0px 30px 0px;
+    margin: 0;
+    list-style: none;
+    li {
+      border-bottom: 1px solid #eeeeee;
+      width: 100%;
+      display: inline-block;
+      padding: 10px 0px;
+      span {
+        margin-right: 10px;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #b9b9b9;
+      }
+      p {
+        display: inline;
+        font-size: 12px;
+        font-weight: 700;
+        color: #ffba00;
+      }
+      &:first-child {
+        border-top: 1px solid #eeeeee;
+      }
+    }  
+  }
+  .contact-info{ 
+    i {
+      width: 40px;
+      height: 40px;
+      background-color: #ffba00;
+      text-align: center;
+      line-height: 40px;
+      display: inline-block;
+      font-size: 15px;
+      color: #ffffff;
+      margin-right: 15px;
+    }
+    span {
+      font-size: 14px;
+      font-weight: 400;
+      color: #b9b9b9;
+      a {
+        float: left;
+        margin-top: 8px;
+        margin-right: 30px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #b9b9b9;
+        &:hover {
+          color: #ffba00;
+          transition: all 0.5s;
+        }
+      }      
+    }    
+  }  
+}
+
+@media (max-width: 991px) {
+  .car-details .contact-info {
+    text-align: center;
+    border: 2px solid #eeeeee;
+    padding: 20px 0px;
+  }
+}
+@media (max-width: 991px) {
+  .car-details .contact-info i {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}

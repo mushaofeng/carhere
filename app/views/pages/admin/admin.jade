@@ -12,9 +12,15 @@ block content
             input#name.form-control(type="text", name="car[name]", value=car.name,placeholder='必填')            
         .form-group
           label.col-sm-2.control-label(for="cover") 
-            a(href="/admin/upload/list",target="_blank") 封面地址
+            a(href="/admin/upload/list",target="_blank") 封面小图地址
           div.col-sm-10
             input#cover.form-control(type="text", name="car[cover]", value=car.cover,placeholder='200*200像素的图片地址')
+              
+        .form-group
+          label.col-sm-2.control-label(for="cover_l") 
+            a(href="/admin/upload/list",target="_blank") 封面大图地址
+          div.col-sm-10
+            input#cover_l.form-control(type="text", name="car[cover_l]", value=car.cover_l,placeholder='700*330像素的图片地址')                
         .form-group
           label.col-sm-2.control-label(for="type") 汽车型号
           div.col-sm-10

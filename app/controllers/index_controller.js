@@ -1,16 +1,26 @@
 var Car = require('../models/car');
-var Category = require('../models/category.js')
-var Banner = require('../models/banner.js')
+var Category = require('../models/category.js');
+var Banner = require('../models/banner.js');
+var Brands = require('../models/brands.js');
+var Car = require('../models/car');
 //-- index
 exports.index = function(req,res){
 		Banner.fetch(function(err,banner){
 			if(err){
 				console.log(err);
 			}
-			res.render('index',{
-				title:'首页',
-				banner:banner
+			Brands.fetch(function  (err,brands) {
+				Car.top(function  (err,cars) {
+					res.render('index',{
+						title:'首页',
+						banner:banner,
+						brands:brands,
+						top:cars
+					})						
+				})
+			
 			})
+
 		});
 };
 // exports.search = function(req,res){

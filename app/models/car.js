@@ -5,6 +5,7 @@ var ObjectId = Schema.Types.ObjectId;
 var CarSchema = new Schema({
 	name:String,//汽车名
 	cover:String,//封面地址
+	cover_l:String,//封面大图
 	type:String,//汽车型号
 	price:String,//汽车价格
 	price_off:String,//折扣价
@@ -13,7 +14,7 @@ var CarSchema = new Schema({
 	year:Number,//出厂年份
 	reserve:Number,//库存
 	summary:String,//概述
-
+	status:Number,//状态 是否
 	// pv:{
 	// 	type:Number,
 	// 	default:0
@@ -53,6 +54,9 @@ CarSchema.statics = {
 	fetch: function(cb){
 		return this.find({}).sort('meta.updateAt').exec(cb);
 	},
+	top: function(cb){
+		return this.find({}).sort('meta.updateAt').limit(5).exec(cb);
+	},	
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
 

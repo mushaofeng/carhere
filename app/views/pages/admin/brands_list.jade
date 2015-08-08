@@ -4,6 +4,7 @@ block content
         thead
           tr
             th 品牌名
+            th 编码
             th 序号
             th logo地址
             th 更新
@@ -12,6 +13,7 @@ block content
           each item in brands
             tr(class="item-id-#{item._id}")
               td #{item.name}
+              td #{item.code}              
               td #{item.order}
               td #{item.logoUrl}
               td: a(target="_blank",href="/admin/brands/update/#{item._id}") 修改

@@ -204,7 +204,7 @@ exports.detail = function(req,res){
 			// console.log('1111     '+car.title);
 			// var carTitle ='Car '+ car.title || '';
 			// Comments
-			res.render('admin/detail',{
+			res.render('detail',{
 				title:'Car 详情',
 				car:car
 			});			

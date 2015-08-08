@@ -7,3 +7,32 @@ mixin pageBlock(url,page)
           li.active: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}
         else
           li: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}           
+mixin carItem(car)
+  .car-item
+    .thumb-content
+      .car-banner-rent
+        a(href='/car/#{car._id}') 折  扣  11
+      a(href='/car/#{car._id}')
+        img(src='#{car.cover_l}', alt='')
+    .down-content
+      a(href='/car/#{car._id}')
+        h4 #{car.name}
+      span ￥#{car.price_off||car.price}万
+      .line-dec
+      p #{car.summary}
+      ul.car-info
+        li
+          span 年份
+          p #{car.year}
+        |                                                 
+        li
+          span 售卖数
+          p #{car.sell_num}
+        |                                                 
+        li
+          span range
+          p 26.00km
+        |                                                 
+        li
+          span fuel
+          p Petrol  

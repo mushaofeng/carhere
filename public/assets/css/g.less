@@ -8,6 +8,7 @@ header {
   width: 100%;
   z-index: 1000;
   color: #fff;
+  top: 0;
 }
 header a {
   color: #fff;
@@ -113,12 +114,21 @@ section {
   line-height: 1em;
   margin-left: 0.2em;
 }
+
 .section-header {
-  text-align: center;
-  margin-bottom: 25px;
+  position: relative;
+  margin-bottom: 15px;
+  text-align: left;
+
 }
-.section-header {
-  text-align: center;
+.section-header .logo-car{
+  position: absolute;
+
+  left: 0;
+  top:20px;
+  img{
+    margin-left: 210px;
+  }
 }
 .section-header .heading {
   background: none repeat scroll 0 0 #000;
@@ -127,11 +137,11 @@ section {
   font-size: 36px;
   height: 60px;
   font-weight: normal;
-  margin-top: 10px;
+  margin:0;
   padding: 10px 20px;
   position: relative;
   text-transform: uppercase;
-  min-width: 50%;
+  /*min-width: 50%;*/
   line-height: 42px;
   border-right: 6px solid #c7081b;
   transform-style: flat;
@@ -300,4 +310,110 @@ section {
   clear: left;
   text-align: center;
 }
+
+/*car-item*/
+
+.car-item {
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  margin-bottom: 30px;
+  &:hover{
+    box-shadow: 0 0 2px 2px #f8f8f8;
+  }
+}
+.car-item .thumb-content .car-banner-rent {
+  position: absolute;
+  margin-top: 0px;
+  right: 0;
+  margin-right: 26px;
+}
+.car-item .thumb-content .car-banner-rent a {
+  background-color: rgba(255, 186, 0, 0.9);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 85px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  display: inline-block;
+}
+.car-item .thumb-content .car-banner-sale {
+  position: absolute;
+  margin-top: 0px;
+  right: 0;
+  margin-right: 26px;
+}
+.car-item .thumb-content .car-banner-sale a {
+  background-color: rgba(24, 66, 140, 0.9);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 85px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  display: inline-block;
+}
+.car-item .thumb-content img {
+  /*width: 100%;*/
+  overflow: hidden;
+  background-size: cover;
+  width: 348px;
+  height: 191px;
+}
+.car-item .down-content {
+  text-align: center;
+}
+.car-item .down-content h4 {
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.car-item .down-content span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #18428c;
+}
+.car-item .down-content .line-dec {
+  margin-top: 15px;
+  width: 40px;
+  height: 2px;
+  background-color: #eeeeee;
+  margin-left: auto;
+  margin-right: auto;
+}
+.car-item .down-content p {
+  margin-top: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 20px;  
+}
+.car-item .down-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.car-item .down-content ul li {
+  display: inline-block;
+  margin: 10px 12px 0px 12px;
+}
+.car-item .down-content ul li span {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #9a9a9a;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+}
+.car-item .down-content ul li p {
+  font-size: 12px;
+  font-weight: 700;
+  color: #c7081b;
+  margin-top: 15px;
+}
+
 

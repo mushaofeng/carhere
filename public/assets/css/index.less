@@ -1,5 +1,6 @@
 .flexslider {
   position: relative;
+  margin-bottom: 0px;
   height: 504px;
   border: 0;
   .slides img {
@@ -62,16 +63,14 @@
 	  content: '';
 	  background: url("/assets/images/slider/large_right.png");
 	}	*/
-	.brand-wrap {
-	  border-bottom: solid 2px #fff;
-	  border-top: solid 3px #fff;
-	  padding: 22px 0;
-	  margin-bottom: 30px;
-	  background: #f0f0f0 url("/assets/images/index/brand_shadow.png") top center repeat-x;
-	}	
+	
 }
-
 .brand-wrap{ 
+  border-bottom: solid 2px #fff;
+  border-top: solid 3px #fff;
+  padding: 22px 0;
+  margin-bottom: 30px;
+  background: #f0f0f0 url("/assets/images/index/brand_shadow.png") top center repeat-x;	
 	.brand-list {
   	width: 880px;
   	margin: 0 auto;
@@ -82,11 +81,17 @@
 	  list-style: none;
 		a {
 		  color: #000;
+		  display: block;
+		  width: 80px;
+		  height: 80px;
 			img {
 			  margin-bottom: 5px;
 			  transition: 500ms;
 			  -webkit-transition: 500ms;
 			  -moz-transition: 500ms;
+			  display: inline-block;
+			  width: 80px;
+			  height: 80px;
 			}		  
 		}	 
 		&:hover img {
@@ -95,6 +100,14 @@
 		  -moz-transform: scale(1.1, 1.1);
 		}
 	}	
+	.brand-shadow{
+		margin-top: 25px;
+    position: absolute;
+    width: 100%;
+    height: 21px;
+    z-index: 77;
+    background: url("/assets/images/index/brand_shadow.png") top center repeat-x;
+	}
 }
 .car-wrap {
   background: #fcfcfc;
@@ -154,3 +167,66 @@
 		}		
 	}  
 }
+.top-wrap{
+	.nav-tabs {
+	  border: none;
+		li {
+		  color: #777;
+		  font-size: 14px;
+		  float: none;
+			a {
+			  margin-right: 2px;
+			  /*margin-bottom: 10px;*/
+			  line-height: 1.42857143;
+			  color: #777;
+			  height: 78px;
+			  overflow: hidden;
+			  background: none;
+			  &:hover{
+			  	border:none;
+			  	background: none;
+					.rank-num {
+					  border: 1px solid transparent;
+					  -webkit-box-shadow: 0 0 8px rgba(199,8,27,0.4);
+					  -moz-box-shadow: 0 0 8px rgba(199,8,27,0.4);
+					  box-shadow: 0 0 8px rgba(199,8,27,0.4);
+					}
+			  } 
+			}		
+			.rank-num {
+			  border: 1px solid #dfdfdf;
+			  border-radius: 100px;
+			  color: #c7081b;
+			  float: left;
+			  font-size: 44px;
+			  height: 53px;
+			  line-height: 43px;
+			  margin: 5px 20px 40px 5px;
+			  padding: 3px 0px 0 0;
+			  text-align: center;
+			  width: 54px;
+			  font-family: "Rockwell";
+			}	
+			strong {
+			  color: #000;
+			  font-size: 18px;
+			  font-weight: normal;
+			  text-transform: uppercase;
+			  display: block;
+			}					  
+		}	  
+		.active a {
+		  border: none;
+			&:hover {
+			  border: none;
+			}		 
+			.rank-num {
+			  border: 1px solid transparent;
+			  -webkit-box-shadow: 0 0 8px rgba(199,8,27,0.4);
+			  -moz-box-shadow: 0 0 8px rgba(199,8,27,0.4);
+			  box-shadow: 0 0 8px rgba(199,8,27,0.4);
+			}			 
+		}		
+	}	
+}
+
