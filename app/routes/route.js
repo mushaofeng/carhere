@@ -66,7 +66,7 @@ module.exports = function(app){
 	app.get('/admin/userList', UserController.signinRequired, UserController.adminRequired, UserController.userList);
 	app.get('/logout',UserController.logout);
 	app.get('/signin',UserController.showSignin);
-	app.get('/signup',UserController.signinRequired, UserController.adminRequired,UserController.showSignup);
+	app.get('/signup',UserController.showSignup);
 	// // Comments
 	// app.post('/admin/comment',UserController.signinRequired,CommentController.save);
 
