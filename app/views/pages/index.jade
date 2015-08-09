@@ -32,7 +32,23 @@ block content
             li
               a(target='_blank', href='www.baidu.com')
                 img(src='#{brand.logoUrl}', height='36')        
-    .brand-shadow   
+    .brand-shadow  
+  .recent-car
+    .container
+      .recent-car-content
+        .row
+          .span8.offset2
+            .section-header
+              .animated.bounceInRight.logo-car
+                img(src='/assets/images/logo/logo-sub1.png')
+              .heading-wrap
+                h2.heading
+                  span 热门推荐
+        |                             
+        .row
+          - each car,index in top
+            .col-md-4
+              +carItem(car)       
   .top-wrap
     .container
       .row
@@ -60,22 +76,7 @@ block content
               article.clearfix.animated.text-left.animation-done
                 a(href='/car/#{car._id}', target='_blank')
                   img.img-responsive(src='#{car.cover_l}')
-  .recent-car
-    .container
-      .recent-car-content
-        .row
-          .span8.offset2
-            .section-header
-              .animated.bounceInRight.logo-car
-                img(src='/assets/images/logo/logo-sub1.png')
-              .heading-wrap
-                h2.heading
-                  span 热门推荐
-        |                             
-        .row
-          - each car,index in top
-            .col-md-4
-              +carItem(car)  
+
   //-.container
     .row
       if categories.length > 0
