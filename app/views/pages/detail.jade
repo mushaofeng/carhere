@@ -7,18 +7,32 @@ block content
       .recent-car-content
         .row
           .col-md-6
-            img(src='#{car.cover_l}',width=570,height=370)
-            //-#car-flexslider.car-flexslider
-              .flex-viewport(style='overflow: hidden; position: relative;')
-                ul.slides(style='width: 800%; transition-duration: 0s; transform: translate3d(-1665px, 0px, 0px);')
-                  li(style='width: 555px; float: left; display: block;')
-                    img(src='#{car.cover_l}', draggable='false')
-                                    
-           //- #car-carousel.car-flexslider
-              .flex-viewport(style='overflow: hidden; position: relative;')
-                ul.slides(style='width: 800%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);')
-                  li(style='width: 115px; float: left; display: block;')
-                    img(src='#{car.cover_l}', draggable='false')                               
+            #myCarousel.carousel.slide(data-ride='carousel')
+              // Indicators
+              ol.carousel-indicators
+                -each imgCover,i in car.cover_l
+                  if i==0
+                    li.active(data-target='#myCarousel', data-slide-to='#{i}')
+                  else
+                    li(data-target='#myCarousel', data-slide-to='#{i}')
+              // Wrapper for slides
+              .carousel-inner(role='listbox')
+                -each imgCover,i in car.cover_l
+                  if i==0
+                    .item.active
+                      img(src='#{imgCover}', alt='...') 
+                   else   
+                    .item
+                      img(src='#{imgCover}', alt='...')
+              a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+                span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                |     
+                span.sr-only Previous
+              |   
+              a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+                span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                |     
+                span.sr-only Next                                                              
           .col-md-6
             .car-details
               a(href='single-car.html')

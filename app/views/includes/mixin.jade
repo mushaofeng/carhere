@@ -1,3 +1,4 @@
+//-翻页模块 
 mixin pageBlock(url,page)
   nav
     ul.pagination
@@ -6,14 +7,15 @@ mixin pageBlock(url,page)
         if page.cur==i
           li.active: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}
         else
-          li: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}           
+          li: a(href=url+"start=#{page.size*i}&size="+page.size) #{i+1}    
+//- 汽车模块 
 mixin carItem(car)
   .car-item
     .thumb-content
       .car-banner-rent
         a(href='/car/#{car._id}') 折  扣  
       a(href='/car/#{car._id}')
-        img(src='#{car.cover_l}', alt='')
+        img(src='#{car.cover}', alt='')
     .down-content
       a(href='/car/#{car._id}')
         h4 #{car.name}
@@ -36,7 +38,7 @@ mixin carItem(car)
         li
           span fuel
           p Petrol
-            
+//- 标签选择弹窗
 mixin tagModal(tags)
   #tagModal.modal.fade
     .modal-dialog  
