@@ -32,7 +32,9 @@ app.use(session({
 	store: new mongoStore({
 		url:Config.dataBase,
 		collection:'sessions'
-	})
+	}),
+	resave:false,
+	saveUninitialized:true
 }));
 
 
