@@ -1,59 +1,78 @@
 extends ../../layout_admin
+include ../../includes/mixin
 block content
 
-      form.form-horizontal(method="post",action="/admin/car/new",enctype="application/x-www-form-urlencoded")
-        //- hiden input??? pass the value
-        if car._id
-          input(type="hidden", name="car[_id]", value=car._id)
+  form.form-horizontal(method="post",action="/admin/car/new",enctype="application/x-www-form-urlencoded")
+    //- hiden input??? pass the value
+    if car._id
+      input(type="hidden", name="car[_id]", value=car._id)
 
-        .form-group
-          label.col-sm-2.control-label(for="name") 汽车名
-          div.col-sm-10
-            input#name.form-control(type="text", name="car[name]", value=car.name,placeholder='必填')            
-        .form-group
-          label.col-sm-2.control-label(for="cover") 
-            a(href="/admin/upload/list",target="_blank") 封面小图地址
-          div.col-sm-10
-            input#cover.form-control(type="text", name="car[cover]", value=car.cover,placeholder='200*200像素的图片地址')
-              
-        .form-group
-          label.col-sm-2.control-label(for="cover_l") 
-            a(href="/admin/upload/list",target="_blank") 封面大图地址
-          div.col-sm-10
-            input#cover_l.form-control(type="text", name="car[cover_l]", value=car.cover_l,placeholder='700*330像素的图片地址')                
-        .form-group
-          label.col-sm-2.control-label(for="type") 汽车型号
-          div.col-sm-10
-            input#type.form-control(type="text", name="car[type]", value=car.type)
-        .form-group
-          label.col-sm-2.control-label(for="price") 售卖价格
-          div.col-sm-10
-            input#price.form-control(type="price", name="car[price]", value=car.price,placeholder='价格单位万')
-        .form-group
-          label.col-sm-2.control-label(for="price_off") 折扣价
-          div.col-sm-10
-            input#price_off.form-control(type="text", name="car[price_off]", value=car.price_off,placeholder='价格单位万')
-        .form-group
-          label.col-sm-2.control-label(for="price_4s") 4S店价格
-          div.col-sm-10
-            input#price_4s.form-control(type="text", name="car[price_4s]", value=car.price_4s,placeholder='价格单位万')
-        .form-group
-          label.col-sm-2.control-label(for="sell_num") 售卖数量
-          div.col-sm-10
-            input#sell_num.form-control(type="text", name="car[sell_num]", value=car.sell_num)
-        .form-group
-          label.col-sm-2.control-label(for="reserve") 库存数
-          div.col-sm-10
-            input#reserve.form-control(type="text", name="car[reserve]", value=car.reserve)               
-        .form-group
-          label.col-sm-2.control-label(for="year") 生产年份
-          div.col-sm-10
-            input#year.form-control(type="text", name="car[year]", value=car.year,placeholder='整数')              
-        .form-group
-          label.col-sm-2.control-label(for="summary") 简介
-          div.col-sm-10
-            input#summary.form-control(type="textarea",rows=3, name="car[summary]",value=car.summary) 
-        .form-group
-          .col-sm-offset-2.col-sm-10
-            button.btn.btn-primary(type="submit") 录入
-  script(src="/assets/js/main.js")
+    .form-group
+      label.col-sm-2.control-label(for="name") 汽车名
+      div.col-sm-10
+        input#name.form-control(type="text", name="car[name]", value=car.name,placeholder='必填')            
+    .form-group
+      label.col-sm-2.control-label(for="cover") 
+        a(href="/admin/upload/list",target="_blank") 封面小图地址
+      div.col-sm-10
+        input#cover.form-control(type="text", name="car[cover]", value=car.cover,placeholder='200*200像素的图片地址')
+          
+    .form-group
+      label.col-sm-2.control-label(for="cover_l") 
+        a(href="/admin/upload/list",target="_blank") 封面大图地址    
+        a.add_input(href="#",title="添加图片地址"): span.glyphicon.glyphicon-plus
+      div.col-sm-10
+        if car.cover_l
+          -each item in car.cover_l
+            input#cover_l.form-control(type="text", name="car[cover_l]", value=item,placeholder='700*330像素的图片地址')                
+        else
+          input#cover_l.form-control(type="text", name="car[cover_l]", value=car.cover_l,placeholder='700*330像素的图片地址')                
+    .form-group
+      label.col-sm-2.control-label(for="type") 
+        a(href="#",data-toggle="modal",data-target="#tagModal",title='点击增加标签') 标签(点击增加)
+      div#tag-content.col-sm-10
+        if tagCar
+          -each tag in tagCar
+            a.label.label-success.tag_close(hrf="#",title="点击删除标签",style="margin-right:10px;") #{tag.name}
+              input#type.form-control(type="hidden", name="car[tag]", value=tag._id)            
+    .form-group
+      label.col-sm-2.control-label(for="type") 汽车型号
+      div.col-sm-10
+        input#type.form-control(type="text", name="car[type]", value=car.type)
+    .form-group
+      label.col-sm-2.control-label(for="price") 售卖价格
+      div.col-sm-10
+        input#price.form-control(type="price", name="car[price]", value=car.price,placeholder='价格单位万')
+    .form-group
+      label.col-sm-2.control-label(for="price_off") 折扣价
+      div.col-sm-10
+        input#price_off.form-control(type="text", name="car[price_off]", value=car.price_off,placeholder='价格单位万')
+    .form-group
+      label.col-sm-2.control-label(for="price_4s") 4S店价格
+      div.col-sm-10
+        input#price_4s.form-control(type="text", name="car[price_4s]", value=car.price_4s,placeholder='价格单位万')
+    .form-group
+      label.col-sm-2.control-label(for="sell_num") 售卖数量
+      div.col-sm-10
+        input#sell_num.form-control(type="text", name="car[sell_num]", value=car.sell_num)
+    .form-group
+      label.col-sm-2.control-label(for="reserve") 库存数
+      div.col-sm-10
+        input#reserve.form-control(type="text", name="car[reserve]", value=car.reserve)               
+    .form-group
+      label.col-sm-2.control-label(for="year") 生产年份
+      div.col-sm-10
+        input#year.form-control(type="text", name="car[year]", value=car.year,placeholder='整数')              
+    .form-group
+      label.col-sm-2.control-label(for="summary") 简介
+      div.col-sm-10
+        input#summary.form-control(type="textarea",rows=3, name="car[summary]",value=car.summary) 
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 录入
+  +tagModal(tags)
+block bottom
+  script(src="/assets/js/page/admin.js")
+
+
+

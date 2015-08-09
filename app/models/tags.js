@@ -37,6 +37,11 @@ TagsSchema.statics = {
 	fetch: function(cb){
 		return this.find({}).sort('meta.updateAt').exec(cb);
 	},
+	getTag:function  (arr,cb) {
+		// body...
+		console.log( arr );
+		return this.find({_id:{$in:arr}}).exec(cb);
+	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
 

@@ -1,7 +1,7 @@
 var Car = require('../models/car');
 var Comment_cl = require('../models/comment.js');
 var _=require('underscore');
-var Category = require('../models/category.js');
+var Tags = require('../models/tags.js');
 var fs = require('fs');
 var path = require('path');
 
@@ -50,31 +50,37 @@ exports.list = function(req,res){
 	};
 
 exports.new = function(req,res){
-		Category.find({})
-		.exec(function(err,categories){
-
+		Tags.find({})
+		.exec(function(err,tags){
 			res.render('admin/admin',{
 				title:'汽车 后台录入',
 				car:{},
-				categories:categories
+				tags:tags
 			});
 
 		});
-
-
 	};
 exports.update = function(req,res){
 		var id = req.params.id;
 		// console.log(id);
-		Car.findById(id,function(err,car){
-			if(err){
-				console.log(err);
-			}
-			res.render('admin/admin',{
-				title:'Car 修改',
-				car:car
-			});
-		});		
+		Tags.find({})
+		.exec(function(err,tags){	
+			Car.findById(id,function(err,car){
+				Tags.getTag(car.tag,function  (err,tagCar) {
+					// body...
+					if(err){
+						console.log(err);
+					}
+					res.render('admin/admin',{
+						title:'Car 修改',
+						car:car,
+						tagCar:tagCar,
+						tags:tags
+					});					
+				})
+			});	
+		});
+	};				
 		// if(id){
 		// 	Car.findById(id,function(err,car){
 		// 		Category.find({},function(err,categories){
@@ -91,13 +97,12 @@ exports.update = function(req,res){
 		// 	});
 		// }
 
-	};
 exports.saveNew = function(req,res){
 		console.log(req.body.car);
 		//bodyParser extended = true  -> is the key !!!
 		var id = req.body.car._id;
 		var carObj = req.body.car;
-		var catId_updated = carObj.category;
+		// var catId_updated = carObj.category;
 		var _car;
 
 		// if(req.poster){
@@ -111,7 +116,7 @@ exports.saveNew = function(req,res){
 				}
 				//******
 				// remove old cat 
-				var catId_old = car.category;
+				// var catId_old = car.category;
 				// Category.findById(catId_old,function(err,category){
 				// 	var index = category.cars.indexOf(id);
 				// 	if(index>-1){
@@ -148,6 +153,7 @@ exports.saveNew = function(req,res){
 			});
 
 		} else {
+			console.log( carObj );
 			_car = new Car(carObj);
 			// var catName = carObj.categoryName;
 			// var catId = carObj.category;

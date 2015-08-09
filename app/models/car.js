@@ -5,7 +5,8 @@ var ObjectId = Schema.Types.ObjectId;
 var CarSchema = new Schema({
 	name:String,//汽车名
 	cover:String,//封面地址
-	cover_l:String,//封面大图
+	cover_l:Array,//封面大图
+	tag:Array,//汽车标签
 	type:String,//汽车型号
 	price:String,//汽车价格
 	price_off:String,//折扣价
@@ -59,7 +60,6 @@ CarSchema.statics = {
 	},	
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
-
 	}
 
 };
