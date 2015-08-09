@@ -50,7 +50,7 @@ block content
               - each car , index  in top
                 li
                   a(href='#tab#{index}', data-toggle='tab', aria-expanded='false')
-                    i.rank-num #{index}
+                    i.rank-num #{index+1}
                     strong #{car.name}
                     | #{car.summary}
                
