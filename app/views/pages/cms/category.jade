@@ -1,0 +1,48 @@
+extends ../../layout_cms
+include ../../includes/mixin
+block content
+
+  form.form-horizontal(method="post",action="/cms/category/new")
+    //- hiden input??? pass the value
+    if category._id
+      input(type="hidden", name="category[_id]", value=category._id)
+    .form-group
+      label.col-sm-2.control-label(for="name") 分类名
+      div.col-sm-10
+        input#name.form-control(type="text", name="category[name]", value=category.name)
+    .form-group
+      label.col-sm-2.control-label(for="code") 分类编码
+      div.col-sm-10
+        input#code.form-control(type="text", name="category[code]", value=category.code)  
+    .form-group
+      label.col-sm-2.control-label(for="desc") 描述
+      div.col-sm-10
+        input#desc.form-control(type="text", name="category[desc]", value=category.desc)   
+    .form-group
+      label.col-sm-2.control-label(for="desc") 加入车量
+      div.col-sm-10
+        table.table.table-hover.table-striped
+          caption
+            a.btn.btn-success(href="#",data-toggle="modal",data-target="#carModal",style="margin-right:10px;") 新增
+            a.btn.btn-danger.list_del(href="javascript:void(0);") 删除            
+          thead
+            tr
+              th #
+              th 汽车名
+              th 查看
+              //- th 删除
+          tbody#carBody   
+            if cateCar
+              each item in cateCar
+                tr(class="item-id-#{item._id}")
+                  td: input(type="checkbox",name="category[cars]",value="#{item._id}",checked)
+                  td #{item.name}
+                  td: a(target="_blank",href="/car/#{item._id}") 查看               
+
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 录入
+  +carModal(car)
+
+block bottom
+  script(src="/assets/js/page/admin.js")

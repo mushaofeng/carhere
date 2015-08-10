@@ -11,6 +11,7 @@ var IndexController = require('../controllers/index_controller.js');
 
 //CMS
 var BannerController = require('../controllers/banner_controller.js');
+var CategoryController = require('../controllers/category_controller.js');
 
 //后端数据 
 var BrandsController = require('../controllers/brands_controller.js');
@@ -18,7 +19,6 @@ var TagsController = require('../controllers/tags_controller.js');
 var CarController = require('../controllers/car_controller.js');
 var UserController = require('../controllers/user_controller.js');
 var CommentController = require('../controllers/comment_controller.js');
-var CategoryController = require('../controllers/category_controller.js');
 var UploadController = require('../controllers/upload_controller.js');
 
 
@@ -45,7 +45,11 @@ module.exports = function(app){
 	app.get('/cms/banner',UserController.signinRequired, UserController.adminRequired,BannerController.new);
 	app.post('/cms/banner/new',UserController.signinRequired, UserController.adminRequired,BannerController.saveNew)
 	app.get('/cms/banner/update/:id',UserController.signinRequired, UserController.adminRequired,BannerController.update);
-	
+	// // Category
+	app.get('/cms/category',CategoryController.new);
+  app.post('/cms/category/new',CategoryController.saveNew)
+	app.get('/cms/category/list',CategoryController.list);	
+	app.get('/cms/category/update/:id',CategoryController.update);	
 	//-- Admin  后台数据管理
 	// app.get('/list',CarController.list);
 	app.get('/car/:id',CarController.detail);

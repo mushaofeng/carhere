@@ -1,0 +1,21 @@
+extends ../../layout_cms
+block content
+  table.table.table-hover.table-striped
+    thead
+      tr
+        th 名字
+        th 数据量
+        th 查看
+        //- th 删除
+    tbody
+      each item in categories
+        tr(class="item-id-#{item._id}")
+          td #{item.name}
+          td #{item.cars.length}台
+          //- td #{moment(item.meta.createAt).format('MM/DD/YYYY')}
+          td: a(target="_blank",href="/cms/category/update/#{item._id}") 查看
+          //- td
+            button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+block bottom
+  script(src="/assets/js/page/admin.js")
+                 

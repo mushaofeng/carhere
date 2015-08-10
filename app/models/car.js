@@ -55,6 +55,15 @@ CarSchema.statics = {
 	fetch: function(cb){
 		return this.find({}).sort('meta.updateAt').exec(cb);
 	},
+	getCarsById:function  (arr,cb) {
+		// body...
+		return this.find({_id:{$in:arr}}).exec(cb);
+	},	
+	page: function  (start,size,cb) {
+		var s=start||0,
+				n=size||10;
+		return this.find({}).sort({_id:-1}).skip(s).limit(n).exec(cb);
+	},
 	top: function(cb){
 		return this.find({}).sort('meta.updateAt').limit(5).exec(cb);
 	},	

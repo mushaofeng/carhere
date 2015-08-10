@@ -39,7 +39,6 @@ TagsSchema.statics = {
 	},
 	getTag:function  (arr,cb) {
 		// body...
-		console.log( arr );
 		return this.find({_id:{$in:arr}}).exec(cb);
 	},
 	findById: function(id, cb){

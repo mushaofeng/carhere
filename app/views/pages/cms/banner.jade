@@ -1,24 +1,24 @@
 extends ../../layout_cms
 block content
 
-      form.form-horizontal(method="post",action="/cms/banner/new",enctype="application/x-www-form-urlencoded")
-        //- hiden input??? pass the value
-        if banner._id
-          input(type="hidden", name="banner[_id]", value=banner._id)
+  form.form-horizontal(method="post",action="/cms/banner/new",enctype="application/x-www-form-urlencoded")
+    //- hiden input??? pass the value
+    if banner._id
+      input(type="hidden", name="banner[_id]", value=banner._id)
 
-        .form-group
-          label.col-sm-2.control-label(for="url") 图片地址
-          div.col-sm-10
-            input#url.form-control(type="text", name="banner[url]", value=banner.url)
-        .form-group
-          label.col-sm-2.control-label(for="link") 链接地址
-          div.col-sm-10
-            input#link.form-control(type="text", name="banner[link]", value=banner.link)
-        .form-group
-          label.col-sm-2.control-label(for="order") 序号
-          div.col-sm-10
-            input#order.form-control(type="text", name="banner[order]", value=banner.order, placeholder='用于排序')
-        .form-group
-          .col-sm-offset-2.col-sm-10
-            button.btn.btn-primary(type="submit") 录入
+    .form-group
+      label.col-sm-2.control-label(for="url") 图片地址
+      div.col-sm-10
+        input#url.form-control(type="text", name="banner[url]", value=banner.url)
+    .form-group
+      label.col-sm-2.control-label(for="link") 链接地址
+      div.col-sm-10
+        input#link.form-control(type="text", name="banner[link]", value=banner.link)
+    .form-group
+      label.col-sm-2.control-label(for="order") 序号
+      div.col-sm-10
+        input#order.form-control(type="text", name="banner[order]", value=banner.order, placeholder='用于排序')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 录入
   //- script(src="/assets/js/main.js")

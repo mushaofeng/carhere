@@ -2,8 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 var CategorySchema = new Schema({
-	name:String,
-	cars:[{type:ObjectId,ref:'Car'}],
+	name:String,//数据集名
+	code:String,//数据集code 
+	desc:String,//数据集描述
+	cars:[{type:ObjectId,ref:'Car'}],//数据集
 	meta:{
 		createAt:{
 			type:Date,

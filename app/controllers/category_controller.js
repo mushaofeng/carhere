@@ -1,5 +1,4 @@
 var Car = require('../models/car');
-var Comment_cl = require('../models/comment.js');
 var Category = require('../models/category.js');
 var _=require('underscore');
 
@@ -9,8 +8,8 @@ exports.list = function(req,res){
 			if(err){
 				console.log(err);
 			}
-			res.render('category_list',{
-				title:'Cat 列表',
+			res.render('cms/category_list',{
+				title:'数据集 列表',
 				categories:categories
 			})
 
@@ -21,23 +20,30 @@ exports.list = function(req,res){
 
 exports.new = function(req,res){
 		
-
-		res.render('category_admin',{
-			title:'movies Cat',
-			category:{
-			// 	// director:'hihi',
-			// 	// title:'hoho',
-			// 	// language:'EN',
-			// 	// country:'CN',
-			// 	// summary:'catcat',
-			// 	// flash:'http://player.youku.com/player.php/sid/XMTI2NjA4MzU1Ng==/v.swf',
-			// 	// poster:'http://img4.duitang.com/uploads/item/201207/08/20120708234648_dwQuG.thumb.600_0.jpeg',
-			// 	// year:2010
-				
-			}
-		});
-
-	};
+	Car.page(0,10,function  (err,car) {
+		res.render('cms/category',{
+			title:'数据集设置',
+			category:{},
+			car:car
+		});		
+	})
+};
+exports.update = function(req,res){
+	var id = req.params.id;
+	// console.log(id);
+	Car.page(0,10,function  (err,car) {	
+		Category.findById(id,function(err,category){
+			Car.getCarsById(category.cars,function  (err,cateCar) {
+				res.render('cms/category',{
+					title:'数据集 修改',
+					car:car,
+					cateCar:cateCar,
+					category:category
+				});					
+			})
+		});	
+	});
+};	
 // exports.adminList = function(req,res){
 // 		var id = req.params.id;
 // 		console.log(id);
@@ -57,53 +63,36 @@ exports.new = function(req,res){
 exports.saveNew = function(req,res){
 		//console.log(req.body.movie);
 		//bodyParser extended = true  -> is the key !!!
-		var _category = req.body.category;
-		var category = new Category(_category);
-		
+		var categoryObj = req.body.category;
+		var id = categoryObj._id;
+		var _category;
+console.log( categoryObj );
+		if(id){
+			Category.findById(id,function  (err,category) {
+				// body...
 
-			category.save(function(err,category){
+				_category=_.extend(category,categoryObj)
+				_category.cars=categoryObj.cars;
+				_category.save(function  (err) {
+					res.redirect('/cms/category/list');
+				})
+			})
+		}else{
+			_category = new Category(categoryObj);
+			_category.save(function(err,category){
 				if(err){
 					console.log(err);
 				}
-				res.redirect('/admin/category/list');
+				res.redirect('/cms/category');
 			});
+		}
+
 
 
 };
 
-// exports.detail = function(req,res){
-// 		var id = req.params.id;
-// 		Car.findById(id,function(err,movie){
-// 			if(err){
-// 				console.log(err);
-// 			}
-// 			// console.log('1111     '+movie.title);
-// 			// var movieTitle ='Car '+ movie.title || '';
-// 			// Comments
-			
-// 			Comment_cl.find({movie:id})
-// 				.populate('from','name')
-// 				.populate('reply.from reply.to','name')
-// 				.exec(function(err,comments){
-					
-// 					console.log(66666+JSON.stringify(comments));
-// 					res.render('detail',{
-// 						title:'Car Detail',
-// 						movie:movie,
-// 						comments:comments
-// 					});
-
-// 				});
-
-
-
-// 		});
-
-// 	};
-
 exports.del = function(req,res){
 		var id = req.query.id;
-		console.log('hahha '+id);
 		if(id){
 			Car.remove({_id:id},function(err,movie){
 				if(err){

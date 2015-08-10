@@ -58,11 +58,11 @@ exports.saveNew = function(req,res){
 		//bodyParser extended = true  -> is the key !!!
 		var brandsObj = req.body.brands;
 		var id=brandsObj._id;
-		var _brands
+		var _brands;
 		if(id){
 			Brands.findById(id,function  (err,brand) {
 				_brands=_.extend(brand,brandsObj);
-				_brands.save(function  () {
+				_brands.save(function  (err) {
 					if(err){
 						console.log(err);
 					}

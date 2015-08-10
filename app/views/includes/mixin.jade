@@ -50,4 +50,26 @@ mixin tagModal(tags)
               input#type.form-control(type="hidden", name="car[tag]", value=tag._id)
         .modal-footer 
           button.btn.btn-default(type="button",data-dismiss="modal") 关闭
-          button.btn.btn-success.tag_submit(type="button",data-dismiss="modal") 提交             
+          button.btn.btn-success.tag_submit(type="button",data-dismiss="modal") 提交   
+//- 标签选择弹窗
+mixin carModal(car)
+  #carModal.modal.fade
+    .modal-dialog  
+      .modal-content
+        .modal-header 增加标签
+        .modal-body(style="min-height:400px;")
+          table.col-sm-10.table.table-hover.table-striped
+            thead
+              tr
+                th #
+                th 汽车名
+                th 看
+            tbody
+              each item in car
+                tr(class="item-id-#{item._id}")
+                  td: input(type="checkbox",name="category[cars]",value="#{item._id}")
+                  td #{item.name}
+                  td: a(target="_blank",href="/car/#{item._id}") 查看               
+        .modal-footer 
+          button.btn.btn-default(type="button",data-dismiss="modal") 关闭
+          button.btn.btn-success.car_list_submit(type="button",data-dismiss="modal") 提交                                 

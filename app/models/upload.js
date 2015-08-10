@@ -41,9 +41,9 @@ UploadSchema.statics = {
 		return this.find().count().exec(cb);
 	},
 	page: function  (start,size,cb) {
-		var start=start||0,
-				size=size||10;
-		return this.find({}).sort({_id:-1}).skip(start).limit(size).exec(cb);
+		var s=start||0,
+				n=size||10;
+		return this.find({}).sort({_id:-1}).skip(s).limit(n).exec(cb);
 	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
