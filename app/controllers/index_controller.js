@@ -13,6 +13,7 @@ exports.index = function(req,res){
 				Car.top(function  (err,cars) {
 					res.render('index',{
 						title:'首页',
+						site:global.siteInfo,
 						banner:banner,
 						brands:brands,
 						top:cars

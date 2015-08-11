@@ -36,6 +36,7 @@ exports.saveUpload = function(req,res,next){
 exports.new = function  (req,res,next) {
 	res.render('admin/upload',{
 		title:'图片上传',
+		site:global.siteInfo
 	});	
 }
 exports.list=function  (req,res,next) {
@@ -58,6 +59,7 @@ exports.list=function  (req,res,next) {
 				})
 			res.render('admin/uploadlist',{
 				title:'上传图片列表',
+				site:global.siteInfo,
 				uploads:uploads,
 				page:_page
 			})			

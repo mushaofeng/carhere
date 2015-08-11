@@ -1,7 +1,6 @@
-# 车在这网站
-### It's a demo practice of building a movie index website with node express mongoDB and jade template
+# nodejs+expree+mongo 搭建web应用
 
-### Makrdown 
+###  
 1. Node
 2. Express
 3. MongoDB

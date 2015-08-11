@@ -1,11 +1,11 @@
 
 .footer
 	.container
-		dl.about-us
+		dl.about-us(style="color:#FFF;")
 			dt 联系我们
-				dd: img(src="./test/egche.png" width="100" height="100")
-				p QQ:03948595
-				p 电话：400-888-7777 
+				dd: img(src="#{site.weixin}" width="100" height="100")
+				p QQ:  #{site.QQ}
+				p 电话：#{site.tel}
 		dl		
 			dt 平行进口车
 				dd 什么是平行进口车？
@@ -21,4 +21,4 @@
 				dd 什么是平行进口车？
 				dd 那里可以找到平行进口车？
 				dd 平行进口车的价格怎么算？
-		p.bottom ICP备案号：京ICP备09079231号-5 ©2014 egche.com 金宝名车汇
+		p.bottom ICP备案号：京ICP备09079231号-5 ©2014 egche.com #{site.name}

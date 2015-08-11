@@ -1,0 +1,51 @@
+extends ../../layout_cms
+block content
+
+  form.form-horizontal(method="post",action="/cms/site/new",enctype="application/x-www-form-urlencoded")
+    //- hiden input??? pass the value
+    if site._id
+      input(type="hidden", name="site[_id]", value=site._id)
+
+    .form-group
+      label.col-sm-2.control-label(for="name") 公司名
+      div.col-sm-10
+        input#name.form-control(type="text", name="site[name]", value=site.name)
+    .form-group
+      label.col-sm-2.control-label(for="title") 网站title
+      div.col-sm-10
+        input#title.form-control(type="text", name="site[title]", value=site.title)
+    .form-group
+      label.col-sm-2.control-label(for="") 公司网址
+      div.col-sm-10
+        input#.form-control(type="text", name="site[]", value=site.)          
+    .form-group
+      label.col-sm-2.control-label(for="keywords") 网站关键字
+      div.col-sm-10
+        input#keywords.form-control(type="text", name="site[keywords]", value=site.keywords, placeholder='网站 keyword 用于 seo')
+    .form-group
+      label.col-sm-2.control-label(for="description") 网站描述
+      div.col-sm-10
+        input#description.form-control(type="text", name="site[description]", value=site.description, placeholder='网站 description 用于 seo')          
+    .form-group
+      label.col-sm-2.control-label(for="tel") 电话
+      div.col-sm-10
+        input#tel.form-control(type="text", name="site[tel]", value=site.tel)  
+    .form-group
+      label.col-sm-2.control-label(for="address") 公司地址
+      div.col-sm-10
+        input#address.form-control(type="text", name="site[address]", value=site.address)                          
+    .form-group
+      label.col-sm-2.control-label(for="weixin") 微信
+      div.col-sm-10
+        input#weixin.form-control(type="text", name="site[weixin]", value=site.weixin, placeholder='微信图片')    
+    .form-group
+      label.col-sm-2.control-label(for="QQ") QQ
+      div.col-sm-10
+        input#QQ.form-control(type="text", name="site[QQ]", value=site.QQ, placeholder='QQ号')                    
+    .form-group
+      label.col-sm-2.control-label(for="time") 营业时间
+      div.col-sm-10
+        input#time.form-control(type="text", name="site[time]", value=site.time, placeholder='营业时间 9：00 - 17：00')    
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 录入

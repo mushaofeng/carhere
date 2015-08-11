@@ -37,6 +37,9 @@ CategorySchema.statics = {
 	fetch: function(cb){
 		return this.find({}).sort('meta.updateAt').exec(cb);
 	},
+	getCategoryCars:function  (id,cb) {
+		return this.findOne({_id: id}).populate('cars').exec(cb)
+	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
 

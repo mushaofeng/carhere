@@ -37,6 +37,7 @@ exports.list = function(req,res){
 		}
 		res.render('admin/list',{
 			title:'Car 列表',
+			site:global.siteInfo,
 			cars:cars
 		})
 	});
@@ -48,6 +49,7 @@ exports.new = function(req,res){
 		.exec(function(err,tags){
 			res.render('admin/admin',{
 				title:'汽车 后台录入',
+				site:global.siteInfo,
 				car:{},
 				tags:tags
 			});
@@ -88,6 +90,7 @@ exports.update = function(req,res){
 				}
 				res.render('admin/admin',{
 					title:'Car 修改',
+					site:global.siteInfo,
 					car:car,
 					tagCar:tagCar,
 					tags:tags
@@ -143,6 +146,7 @@ exports.detail = function(req,res){
 			}
 			res.render('detail',{
 				title:'Car 详情',
+				site:global.siteInfo,
 				car:car
 			});			
 		});
@@ -164,13 +168,20 @@ exports.del = function(req,res){
 exports.api={};
 exports.api.car=function  (req,res) {
 		var id = req.query.id;
+		var s=req.query.s;
 		if(id){
 			Car.findById(id,function(err,car){
-				// res.send(car);
-				// &callback=asdfasdf
 				res.jsonp(car);
 			});
-		}	
+		}
+		if(s){
+			Car.search(s,function  (err,car) {
+				// res.jsonp(car)
+				res.render('api/carlist',{
+					car:car
+				});					
+			})
+		}
 }
 
 

@@ -33,4 +33,21 @@ require(['g'],function  (G) {
 	$(".list_del").on('click',function  () {
 		$("#carBody input:checked").parents('tr').remove();
 	})
+  $(function() {
+    $("#carBody").sortable();
+    $("#carBody").disableSelection();
+  });
+
+  // search
+  $("#searchBtn").on('click',function  () {
+  	// body...
+  	var url='/api/car?s='+$("#searchCar").val();
+  	$.ajax({
+  		url:url,
+  		dataType:'html',
+  		success:function  (html) {
+  			$("#carModal tbody").html(html)
+  		}
+  	})
+  })
 })

@@ -9,7 +9,8 @@ exports.list = function(req,res){
 				console.log(err);
 			}
 			res.render('admin/brands_list',{
-				title:'Cat 列表',
+				title:'品牌 列表',
+				site:global.siteInfo,
 				brands:brands
 			})
 
@@ -19,40 +20,12 @@ exports.list = function(req,res){
 	};
 
 exports.new = function(req,res){
-		
-
 		res.render('admin/brands',{
 			title:'汽车品牌',
-			brands:{
-			// 	// director:'hihi',
-			// 	// title:'hoho',
-			// 	// language:'EN',
-			// 	// country:'CN',
-			// 	// summary:'catcat',
-			// 	// flash:'http://player.youku.com/player.php/sid/XMTI2NjA4MzU1Ng==/v.swf',
-			// 	// poster:'http://img4.duitang.com/uploads/item/201207/08/20120708234648_dwQuG.thumb.600_0.jpeg',
-			// 	// year:2010
-				
-			}
+			site:global.siteInfo,
+			brands:{}
 		});
-
 	};
-// exports.adminList = function(req,res){
-// 		var id = req.params.id;
-// 		console.log(id);
-// 		if(id){
-// 			Car.findById(id,function(err,movie){
-// 				if(err){
-// 					console.log(err);
-// 				}
-// 				res.render('admin/admin',{
-// 					title:'Moive 后台',
-// 					movie:movie
-// 				});
-// 			});
-// 		}
-
-// 	};
 exports.saveNew = function(req,res){
 		//console.log(req.body.movie);
 		//bodyParser extended = true  -> is the key !!!

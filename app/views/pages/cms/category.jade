@@ -31,7 +31,7 @@ block content
               th 汽车名
               th 查看
               //- th 删除
-          tbody#carBody   
+          tbody#carBody.ui-sortable
             if cateCar
               each item in cateCar
                 tr(class="item-id-#{item._id}")
@@ -43,6 +43,5 @@ block content
       .col-sm-offset-2.col-sm-10
         button.btn.btn-primary(type="submit") 录入
   +carModal(car)
-
 block bottom
   script(src="/assets/js/page/admin.js")

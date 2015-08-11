@@ -10,6 +10,7 @@ exports.list = function(req,res){
 			}
 			res.render('admin/tags_list',{
 				title:'标签列表',
+				site:global.siteInfo,
 				tags:tags
 			})
 
@@ -23,17 +24,8 @@ exports.new = function(req,res){
 
 		res.render('admin/tags',{
 			title:'标签',
-			tags:{
-			// 	// director:'hihi',
-			// 	// title:'hoho',
-			// 	// language:'EN',
-			// 	// country:'CN',
-			// 	// summary:'catcat',
-			// 	// flash:'http://player.youku.com/player.php/sid/XMTI2NjA4MzU1Ng==/v.swf',
-			// 	// poster:'http://img4.duitang.com/uploads/item/201207/08/20120708234648_dwQuG.thumb.600_0.jpeg',
-			// 	// year:2010
-				
-			}
+			site:global.siteInfo,
+			tags:{}
 		});
 
 	};
@@ -88,40 +80,11 @@ exports.update = function(req,res){
 			}
 			res.render('admin/tags',{
 				title:'标签 修改',
+				site:global.siteInfo,
 				tags:tags
 			});
 		});		
 	};
-
-// exports.detail = function(req,res){
-// 		var id = req.params.id;
-// 		Car.findById(id,function(err,movie){
-// 			if(err){
-// 				console.log(err);
-// 			}
-// 			// console.log('1111     '+movie.title);
-// 			// var movieTitle ='Car '+ movie.title || '';
-// 			// Comments
-			
-// 			Comment_cl.find({movie:id})
-// 				.populate('from','name')
-// 				.populate('reply.from reply.to','name')
-// 				.exec(function(err,comments){
-					
-// 					console.log(66666+JSON.stringify(comments));
-// 					res.render('admin/detail',{
-// 						title:'Car Detail',
-// 						movie:movie,
-// 						comments:comments
-// 					});
-
-// 				});
-
-
-
-// 		});
-
-// 	};
 
 exports.del = function(req,res){
 		var id = req.query.id;

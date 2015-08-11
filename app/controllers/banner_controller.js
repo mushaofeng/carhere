@@ -10,6 +10,7 @@ exports.list = function(req,res){
 		}
 		res.render('cms/banner_list',{
 			title:'焦点图 列表',
+			site:global.siteInfo,
 			banner:banner
 		})
 	});
@@ -18,6 +19,7 @@ exports.list = function(req,res){
 exports.new = function(req,res){
 	res.render('cms/banner',{
 		title:'焦点图',
+		site:global.siteInfo,
 		banner:{
 		}
 	});
@@ -55,6 +57,7 @@ exports.update = function(req,res){
 		}
 		res.render('cms/banner',{
 			title:'焦点图 修改',
+			site:global.siteInfo,
 			banner:banner
 		});
 	});		

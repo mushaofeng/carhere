@@ -43,7 +43,6 @@ exports.signin = function(req,res){
 			user.comparePassword(password,function(err,isMatch){
 				if(err){
 					console.log(err);
-					console.log('002');
 				}
 				if(isMatch){
 					req.session.user = user;
@@ -80,6 +79,7 @@ exports.userList = function(req,res){
 			}
 			res.render('admin/userList',{
 				title:'User 列表',
+				site:global.siteInfo,
 				users:users,
 				user:user
 			})
@@ -97,13 +97,15 @@ exports.logout = function(req,res){
 	};
 exports.showSignin = function(req,res){
 	res.render('admin/signin',{
-		title:'登录页面'
+		title:'登录页面',
+		site:global.siteInfo		
 	});
  }
 
 exports.showSignup = function(req,res){
 	res.render('admin/signup',{
-		title:'注册页面'
+		title:'注册页面',
+		site:global.siteInfo
 	});
 
 }

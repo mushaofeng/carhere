@@ -67,6 +67,9 @@ CarSchema.statics = {
 	top: function(cb){
 		return this.find({}).sort('meta.updateAt').limit(5).exec(cb);
 	},	
+	search:function  (s,cb) {
+		return this.find({'name':eval('/'+s+'/')}).exec(cb);
+	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
 	}

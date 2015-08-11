@@ -14,6 +14,7 @@ var app = express();
 // Route module
 var Route = require('./app/routes/route');
 
+var Site = require('./app/models/site.js');
 
 
 
@@ -27,6 +28,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 // session and cookie Parser
 app.use(cookieParser());
+
+
 app.use(session({
 	secret:'Car',
 	store: new mongoStore({
@@ -37,7 +40,10 @@ app.use(session({
 	saveUninitialized:true
 }));
 
-
+// 取网站信息
+Site.fetch(function  (err,site) {
+	global.siteInfo=site[0];
+})
 
 
 // app.locals - global
@@ -47,6 +53,7 @@ app.locals.moment = require('moment');
 app.set('view engine','jade');
 // set views -> views/pages
 app.set('views','./app/views/pages'); 
+
 
 
 // app use : static for project 

@@ -416,4 +416,33 @@ section {
   margin-top: 15px;
 }
 
+/*mixin-serarch*/
+.search-field{
+  font-size: 13px;
+  height: 30px;
+  float: right;
+  .search-field__input{
+    display: inline-block;
+  }
+  input.search-field__input-field{
+    padding: 5px 8px 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;   
+    color: #7e7e7e; 
+  }
+  button.search-field__button {
+    position: relative;
+    left: -4px;
+    padding: 3px 8px 6px;
+    background-color: #fff;
+    color: #999;
+    border-radius: 0 4px 4px 0;
+    border: 1px solid #ddd;
+    border-left: none;
+    font-size: 14px;
+    .glyphicon{
+      top:4px;
+    }
+  }
 
+}

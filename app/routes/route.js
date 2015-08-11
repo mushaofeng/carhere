@@ -8,7 +8,7 @@ var multiMid = multipart();
 
 //前台
 var IndexController = require('../controllers/index_controller.js');
-
+var SiteController = require('../controllers/site_controller.js');
 //CMS
 var BannerController = require('../controllers/banner_controller.js');
 var CategoryController = require('../controllers/category_controller.js');
@@ -40,7 +40,12 @@ module.exports = function(app){
 	//-- INDEX  网站页面
 	app.get('/',IndexController.index);
 
+	// API 接口
+	app.get('/api/car',CarController.api.car);
 	// CMS 页面
+	app.get('/cms/site',UserController.signinRequired, UserController.adminRequired,SiteController.new);
+	app.post('/cms/site/new',UserController.signinRequired, UserController.adminRequired,SiteController.saveNew)
+
 	app.get('/cms/banner/list',UserController.signinRequired, UserController.adminRequired,BannerController.list);
 	app.get('/cms/banner',UserController.signinRequired, UserController.adminRequired,BannerController.new);
 	app.post('/cms/banner/new',UserController.signinRequired, UserController.adminRequired,BannerController.saveNew)

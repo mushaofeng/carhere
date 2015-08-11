@@ -1,3 +1,6 @@
+//-test
+mixin test()
+  test test11111
 //-翻页模块 
 mixin pageBlock(url,page)
   nav
@@ -52,24 +55,31 @@ mixin tagModal(tags)
           button.btn.btn-default(type="button",data-dismiss="modal") 关闭
           button.btn.btn-success.tag_submit(type="button",data-dismiss="modal") 提交   
 //- 标签选择弹窗
+mixin carListItem(car)
+  each item in car
+    tr(class="item-id-#{item._id}")
+      td: input(type="checkbox",name="category[cars]",value="#{item._id}")
+      td #{item.name}
+      td: a(target="_blank",href="/car/#{item._id}") 查看    
 mixin carModal(car)
   #carModal.modal.fade
     .modal-dialog  
       .modal-content
         .modal-header 增加标签
+          .search-field.-border-light
+            .search-field__input
+              input#searchCar.js-term.search-field__input-field(name="term",placeholder="Search",type="search")
+            button#searchBtn.search-field__button
+              i.e-icon.-icon-search: span.glyphicon.glyphicon-search
         .modal-body(style="min-height:400px;")
           table.col-sm-10.table.table-hover.table-striped
             thead
               tr
-                th #
+                th 序号
                 th 汽车名
                 th 看
             tbody
-              each item in car
-                tr(class="item-id-#{item._id}")
-                  td: input(type="checkbox",name="category[cars]",value="#{item._id}")
-                  td #{item.name}
-                  td: a(target="_blank",href="/car/#{item._id}") 查看               
+              +carListItem(car)              
         .modal-footer 
           button.btn.btn-default(type="button",data-dismiss="modal") 关闭
           button.btn.btn-success.car_list_submit(type="button",data-dismiss="modal") 提交                                 
