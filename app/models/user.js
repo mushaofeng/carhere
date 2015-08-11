@@ -4,6 +4,7 @@ var bcrypt = require('bcrypt-nodejs');
 var UserSchema = new Schema({
 	name:{type:String,required:true,unique:true},
 	password:{type:String,required:true},
+	operator:String,	
 	role:{
 		type:Number,
 		default:0
@@ -24,6 +25,7 @@ var UserSchema = new Schema({
 
 // Middleware!
 UserSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	var user = this;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();

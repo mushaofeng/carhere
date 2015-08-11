@@ -13,6 +13,7 @@ var SiteSchema = new Schema({
 	weixin:String,//公司微信 
 	QQ:String,//QQ
 	time:String,//营业时间 
+	operator:String,
 	// pv:{
 	// 	type:Number,
 	// 	default:0
@@ -37,6 +38,7 @@ var SiteSchema = new Schema({
 
 // Middleware!
 SiteSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{

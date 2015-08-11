@@ -6,6 +6,7 @@ var BrandsSchema = new Schema({
 	code:String,//编码
 	logoUrl:String,//logo 图片地址
 	order:Number,//排序
+	operator:String,	
 	meta:{
 		createAt:{
 			type:Date,
@@ -22,6 +23,7 @@ var BrandsSchema = new Schema({
 
 // Middleware!
 BrandsSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{

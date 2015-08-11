@@ -5,6 +5,7 @@ var ObjectId = Schema.Types.ObjectId;
 var UploadSchema = new Schema({
 	name:String,
 	path:String,
+	operator:String,	
 	meta:{
 		createAt:{
 			type:Date,
@@ -21,6 +22,7 @@ var UploadSchema = new Schema({
 
 // Middleware!
 UploadSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{

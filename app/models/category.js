@@ -6,6 +6,7 @@ var CategorySchema = new Schema({
 	code:String,//数据集code 
 	desc:String,//数据集描述
 	cars:[{type:ObjectId,ref:'Car'}],//数据集
+	operator:String,	
 	meta:{
 		createAt:{
 			type:Date,
@@ -22,6 +23,7 @@ var CategorySchema = new Schema({
 
 // Middleware!
 CategorySchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{

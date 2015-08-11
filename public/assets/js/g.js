@@ -1,4 +1,4 @@
-define('g',['widget/animate'],function  (Animate) {
+define('g',['widget/animate','widget/clipboard'],function  (Animate,Clipboard) {
 	var G={};
 	function navInit () {
     	if($(document).scrollTop()>50){
@@ -7,19 +7,12 @@ define('g',['widget/animate'],function  (Animate) {
     		$('.topNav').removeClass('nav-fixed');
     	}		
 	}
-	function clipboard (argument) {
-		// 复制粘贴功能
-		var client = new ZeroClipboard( $('.clip_board') );
-		client.on( 'copy',function( event ) {
-				var clipboard = event.clipboardData;
-				clipboard.setData( 'text/plain', $(event.target).data('clip') );
-		});	
-	}
+
     G.init = function  () {
-		Animate();
-		clipboard();
+		new Animate();
+		new Clipboard();
 	    $(window).scroll(function  () {
-	    	Animate();
+	    	new Animate();
 	    	navInit();
 	    })    	
     }

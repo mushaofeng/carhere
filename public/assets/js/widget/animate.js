@@ -1,8 +1,8 @@
 define('widget/animate',[],function  () {
 	$.fn.carAnimate = function  () {
 		$(this).addClass("bounceInRight").removeAttr("data-animate");
-	}     		
-	return function  () {
+	}     
+	function carAnimate () {
     	if($("[data-animate]").length==0){
     		return;
     	}
@@ -12,5 +12,6 @@ define('widget/animate',[],function  () {
 					$(o).carAnimate();
 			}	
     	})		
-	}
+	}			
+	return carAnimate;
 })

@@ -6,6 +6,7 @@ var BannerSchema = new Schema({
 	url:String,//banner图片地址
 	order:Number,//排序
 	status:Number,//状态 是否显示
+
 	meta:{
 		createAt:{
 			type:Date,
@@ -22,6 +23,7 @@ var BannerSchema = new Schema({
 
 // Middleware!
 BannerSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{

@@ -6,6 +6,7 @@ var TagsSchema = new Schema({
 	// code:String,//编码
 	order:Number,//排序
 	show:Number,
+	operator:String,	
 	meta:{
 		createAt:{
 			type:Date,
@@ -22,6 +23,7 @@ var TagsSchema = new Schema({
 
 // Middleware!
 TagsSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{

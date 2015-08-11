@@ -1,7 +1,7 @@
 require(['g','libs/jquery.flexslider'], function(G,Slider) {
 	G.init();
     $('.flexslider').flexslider({
-        animation: "slide"
+        animation: 'slide'
     });	
 	// alert(1111);
   $('.nav-tabs a:first').tab('show');

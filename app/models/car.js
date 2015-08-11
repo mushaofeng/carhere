@@ -16,6 +16,7 @@ var CarSchema = new Schema({
 	reserve:Number,//库存
 	summary:String,//概述
 	status:Number,//状态 是否
+	operator:String,
 	// pv:{
 	// 	type:Number,
 	// 	default:0
@@ -40,6 +41,7 @@ var CarSchema = new Schema({
 
 // Middleware!
 CarSchema.pre('save',function(next){
+	this.operator=global.user.name;
 	if(this.isNew){
 		this.meta.createAt = this.meta.updateAt = Date.now();
 	} else{
@@ -68,7 +70,7 @@ CarSchema.statics = {
 		return this.find({}).sort('meta.updateAt').limit(5).exec(cb);
 	},	
 	search:function  (s,cb) {
-		return this.find({'name':eval('/'+s+'/')}).exec(cb);
+		return this.find({'name':new Function('/'+s+'/')}).exec(cb);
 	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
