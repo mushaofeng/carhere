@@ -35,7 +35,7 @@ exports.update = function(req,res){
 	// console.log(id);
 	Car.page(0,10,function  (err,car) {	
 		Category.findById(id,function(err,category){
-			Category.getCategoryCars(id,function  (err,cateCar) {
+			Category.getCategoryCars(category.code,function  (err,cateCar) {
 				res.render('cms/category',{
 					title:'数据集 修改',
 					site:global.siteInfo,
