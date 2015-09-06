@@ -176,6 +176,7 @@ exports.api.car=function  (req,res) {
 		}
 		if(s){
 			Car.search(s,function  (err,car) {
+				console.log('carlist', car );
 				// res.jsonp(car)
 				res.render('api/carlist',{
 					car:car

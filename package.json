@@ -1,5 +1,5 @@
 {
-  "name": "myMovie",
+  "name": "carhere",
   "version": "0.0.0",
   "description": "",
   "main": "app.js",
@@ -28,7 +28,10 @@
     "grunt-contrib-less": "~1.0.1",
     "grunt-contrib-uglify": "~0.9.1",
     "grunt-contrib-jshint": "~0.11.2",
-    "chai": "~3.1.0"
+    "chai": "~3.1.0",
+    "gulp": "^3.8.11",
+    "gulp-stylus": "^2.0.1",
+    "nobone-sync": "^0.5.10"    
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

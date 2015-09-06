@@ -6,7 +6,7 @@ var BannerSchema = new Schema({
 	url:String,//banner图片地址
 	order:Number,//排序
 	status:Number,//状态 是否显示
-
+	operator:String,
 	meta:{
 		createAt:{
 			type:Date,
