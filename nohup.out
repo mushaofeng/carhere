@@ -12637,3 +12637,129 @@ Warning: missing space before text for line 2 of jade file "/alidata/node/carher
 [0mGET / [32m200 [0m150.611 ms - 18007[0m
 [0mOPTIONS / [32m200 [0m1.529 ms - 8[0m
 [0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.175 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m154.817 ms - 18007[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.747 ms - 64[0m
+[0mGET /upload/1439080127227.jpeg,http://182.92.183.34:3000/upload/1439080326665.jpeg,http://182.92.183.34:3000/upload/1439080140234.jpeg [33m404 [0m1.383 ms - 142[0m
+[0mGET /fonts/flexslider-icon.woff [33m404 [0m0.637 ms - 39[0m
+[0mGET /fonts/flexslider-icon.ttf [33m404 [0m1.352 ms - 38[0m
+[0mGET /fonts/flexslider-icon.svg [33m404 [0m0.662 ms - 38[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [36m304 [0m206.008 ms - -[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.940 ms - 64[0m
+[0mGET /upload/1439080127227.jpeg,http://182.92.183.34:3000/upload/1439080326665.jpeg,http://182.92.183.34:3000/upload/1439080140234.jpeg [33m404 [0m1.221 ms - 142[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m212.808 ms - 18007[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m193.056 ms - 18007[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m1.156 ms - 64[0m
+[0mGET /upload/1439080127227.jpeg,http://182.92.183.34:3000/upload/1439080326665.jpeg,http://182.92.183.34:3000/upload/1439080140234.jpeg [33m404 [0m1.205 ms - 142[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m195.016 ms - 18007[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m139.831 ms - 18007[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m148.088 ms - 18007[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.816 ms - 64[0m
+[0mGET /upload/1439080127227.jpeg,http://182.92.183.34:3000/upload/1439080326665.jpeg,http://182.92.183.34:3000/upload/1439080140234.jpeg [33m404 [0m1.016 ms - 142[0m
+[0mGET /favicon.ico [33m404 [0m0.806 ms - 24[0m
+[0mGET /www.baidu.com [33m404 [0m0.529 ms - 26[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m176.414 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m0.707 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m0.674 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m185.244 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m0.708 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.722 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m171.728 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m1.124 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.525 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m246.277 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m1.155 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.758 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m188.329 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m1.220 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.272 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m166.367 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m0.717 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m0.740 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m175.298 ms - 18007[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m168.028 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m0.774 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m0.617 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m164.289 ms - 18007[0m
+[0mOPTIONS / [32m200 [0m1.070 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m1.251 ms - 48[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m148.847 ms - 18007[0m
+[0mGET /sitemap.xml [33m404 [0m1.067 ms - 24[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m143.349 ms - 18007[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET / [32m200 [0m147.795 ms - 18007[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.894 ms - 64[0m
+[0mGET /upload/1439080127227.jpeg,http://182.92.183.34:3000/upload/1439080326665.jpeg,http://182.92.183.34:3000/upload/1439080140234.jpeg [33m404 [0m0.548 ms - 142[0m
+[0mGET /favicon.ico [33m404 [0m1.344 ms - 24[0m
+[0mGET /admin/car [36m302 [0m0.686 ms - 70[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /signin [32m200 [0m73.178 ms - 6155[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.911 ms - 64[0m
+[0mPOST /user/signin [36m302 [0m2.921 ms - 70[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /signup [32m200 [0m73.943 ms - 5482[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.828 ms - 64[0m
+[0mGET /admin/car [36m302 [0m0.705 ms - 70[0m
+Warning: missing space before text for line 9 of jade file "/alidata/node/carhere/app/views/includes/footer.jade"
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /signin [36m304 [0m64.542 ms - -[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.745 ms - 64[0m
+[0mPOST /user/signin [36m302 [0m336.522 ms - 82[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/brands [32m200 [0m83.744 ms - 6020[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.809 ms - 64[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/car [32m200 [0m157.623 ms - 9985[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.709 ms - 64[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/car/list [32m200 [0m110.733 ms - 7058[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m1.065 ms - 64[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/tags [32m200 [0m105.025 ms - 5680[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.947 ms - 64[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/tags/list [32m200 [0m96.059 ms - 5431[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.729 ms - 64[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/upload [32m200 [0m62.885 ms - 5266[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.846 ms - 64[0m
+Warning: missing space before text for line 2 of jade file "/alidata/node/carhere/app/views/includes/foot.jade"
+[0mGET /admin/upload/list [32m200 [0m124.046 ms - 9860[0m
+[0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.917 ms - 64[0m
