@@ -36,7 +36,7 @@ block content
             a.label.label-success.tag_close(hrf="#",title="点击删除标签",style="margin-right:10px;") #{tag.name}
               input#type.form-control(type="hidden", name="car[tag]", value=tag._id)            
     .form-group
-      label.col-sm-2.control-label(for="type") 汽车型号
+      label.col-sm-2.control-label(for="type") 汽车编号
       div.col-sm-10
         input#type.form-control(type="text", name="car[type]", value=car.type)
     .form-group
@@ -64,7 +64,7 @@ block content
       div.col-sm-10
         input#year.form-control(type="text", name="car[year]", value=car.year,placeholder='整数')              
     .form-group
-      label.col-sm-2.control-label(for="summary") 简介
+      label.col-sm-2.control-label(for="summary") 配置
       div.col-sm-10
         input#summary.form-control(type="textarea",rows=3, name="car[summary]",value=car.summary) 
     .form-group

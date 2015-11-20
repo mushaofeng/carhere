@@ -18,5 +18,11 @@ mongo
 node app.js
 
 
+###mongo
+进入mongo  控制台mongot 命令
+show dbs
+show tables
+db.ranks.remove({})
+mongo命令帮助（http://www.cnblogs.com/xusir/archive/2012/12/24/2830957.html）
 
 > Let's Go

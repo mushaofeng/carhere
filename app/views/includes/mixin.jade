@@ -15,7 +15,7 @@ mixin pageBlock(url,page)
 mixin carItem(car)
   .car-item
     .thumb-content
-      .car-banner-rent
+      //- .car-banner-rent
         a(href='/car/#{car._id}') 折  扣  
       a(href='/car/#{car._id}')
         img(src='#{car.cover}', alt='')
@@ -23,9 +23,9 @@ mixin carItem(car)
       a(href='/car/#{car._id}')
         h4 #{car.name}
       span ￥#{car.price_off||car.price}万
-      .line-dec
+      //- .line-dec
       p #{car.summary}
-      ul.car-info
+      //- ul.car-info
         li
           span 年份
           p #{car.year}

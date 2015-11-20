@@ -2,24 +2,31 @@ var Car = require('../models/car');
 var Category = require('../models/category.js');
 var Banner = require('../models/banner.js');
 var Brands = require('../models/brands.js');
+var Rank = require('../models/rank.js')
 //-- index
 exports.index = function(req,res){
-	// top_sell top_hot
+	// new_car hot_car
 		Banner.fetch(function(err,banner){
 			Brands.fetch(function  (err,brands) {
-				Category.getCategoryCars('top_sell',function  (err,top_sell) {
-					Category.getCategoryCars('top_hot',function  (err,top_hot) {
-						if(err){
-							console.log(err);
-						}
-						res.render('index',{
-							title:'首页',
-							site:global.siteInfo,
-							banner:banner,
-							brands:brands,
-							top:top_sell.cars,
-							hot:top_hot.cars
-						})						
+				Category.getCategoryCars('new_car',function  (err,new_car) {
+					Category.getCategoryCars('hot_car',function  (err,hot_car) {
+						Category.getCategoryCars('unsale_car',function  (err,unsale_car) {
+							Rank.fetch(function  (err,rank) {
+								if(err){
+									console.log(err);
+								}
+								res.render('index',{
+									title:'首页',
+									site:global.siteInfo,
+									banner:banner,
+									brands:brands,
+									newCar:new_car.cars,
+									hotCar:hot_car.cars,
+									unsaleCar:hot_car.cars,
+									rank:rank
+								})									
+							})
+						})					
 					})
 				})
 			})

@@ -11,19 +11,25 @@ block content
     .slider-box
       .row-box
         .title-box
-          h3: i.fa.fa-fw.fa-clock-o 100%划算
+          h3: i.fa.fa-fw.fa-clock-o 销售龙虎榜
         .content-box
-          p 保证比直接到4S店购车划算
-      .row-box
-        .title-box
-          h3: i.fa.fa-fw.fa-map-marker 服务保障
-        .content-box
-          p 不买车随时退款
-      .row-box
-        .title-box
-          h3: i.fa.fa-fw.fa-phone 限时限量
-        .content-box
-          p.tlg 限时特卖，限量抢购
+          //- p 保证比直接到4S店购车划算
+          ul.rank
+            - for item,index in rank
+              li
+                i.sell-num #{item.num}台
+                i.rank-index #{index+1}
+                span.rank-name #{item.name}               
+      //- .row-box
+      //-   .title-box
+      //-     h3: i.fa.fa-fw.fa-map-marker 服务保障
+      //-   .content-box
+      //-     p 不买车随时退款
+      //- .row-box
+      //-   .title-box
+      //-     h3: i.fa.fa-fw.fa-phone 限时限量
+      //-   .content-box
+      //-     p.tlg 限时特卖，限量抢购
   .brand-wrap
     .container
       .row
@@ -36,19 +42,27 @@ block content
   .recent-car
     .container
       .recent-car-content
-        .row
-          .span8.offset2
-            .section-header
-              .animated.bounceInRight.logo-car
-                img(src='/assets/images/logo/logo-sub1.png')
-              .heading-wrap
-                h2.heading
-                  span 热门推荐
-        |                             
-        .row
-          - each car,index in hot
-            .col-md-4
-              +carItem(car)       
+        dl.col-md-4
+          dt
+            h2.heading
+              span 最新车
+          - each car,index in newCar
+            dd
+              +carItem(car) 
+        dl.col-md-4
+          dt
+            h2.heading
+              span 畅销车
+          - each car,index in hotCar
+            dd
+              +carItem(car)        
+        dl.col-md-4
+          dt
+            h2.heading
+              span 滞销车
+          - each car,index in unsaleCar
+            dd
+              +carItem(car)                             
   .top-wrap
     .container
       .row
@@ -63,7 +77,7 @@ block content
         .col-xs-12.col-sm-6.col-lg-6
           article
             ul.nav.nav-tabs
-              - each car , index  in top
+              - each car , index  in hotCar
                 li
                   a(href='#tab#{index}', data-toggle='tab', aria-expanded='false')
                     i.rank-num #{index+1}
@@ -71,7 +85,7 @@ block content
                     | #{car.summary}
                
         .tab-content.col-xs-12.col-sm-6.col-lg-6
-          - each car,index in top
+          - each car,index in hotCar
             .tab-pane(id='tab#{index}')
               article.clearfix.animated.text-left.animation-done
                 a(href='/car/#{car._id}', target='_blank')

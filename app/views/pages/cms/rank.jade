@@ -1,0 +1,20 @@
+extends ../../layout_cms
+block content
+
+  form.form-horizontal(method="post",action="/cms/rank/new",enctype="application/x-www-form-urlencoded")
+    //- hiden input??? pass the value
+    if rank._id
+      input(type="hidden", name="rank[_id]", value=rank._id)
+
+    .form-group
+      label.col-sm-2.control-label(for="name") 团队名称
+      div.col-sm-10
+        input#name.form-control(type="text", name="rank[name]", value=rank.name)
+    .form-group
+      label.col-sm-2.control-label(for="num") 销售数量
+      div.col-sm-10
+        input#num.form-control(type="text", name="rank[num]", value=rank.num)
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 录入
+  //- script(src="/assets/js/main.js")

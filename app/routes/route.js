@@ -10,6 +10,7 @@ var multiMid = multipart();
 var IndexController = require('../controllers/index_controller.js');
 var SiteController = require('../controllers/site_controller.js');
 //CMS
+var RankController = require('../controllers/rank_controller.js');
 var BannerController = require('../controllers/banner_controller.js');
 var CategoryController = require('../controllers/category_controller.js');
 
@@ -47,13 +48,20 @@ module.exports = function(app){
 	app.get('/cms/site',UserController.signinRequired, UserController.adminRequired,SiteController.new);
 	app.post('/cms/site/new',UserController.signinRequired, UserController.adminRequired,SiteController.saveNew)
 
+	app.get('/cms/rank/list',UserController.signinRequired, UserController.adminRequired,RankController.list);
+	app.get('/cms/rank',UserController.signinRequired, UserController.adminRequired,RankController.new);
+	app.post('/cms/rank/new',UserController.signinRequired, UserController.adminRequired,RankController.saveNew)
+	app.get('/cms/rank/update/:id',UserController.signinRequired, UserController.adminRequired,RankController.update);
+
+
+
 	app.get('/cms/banner/list',UserController.signinRequired, UserController.adminRequired,BannerController.list);
 	app.get('/cms/banner',UserController.signinRequired, UserController.adminRequired,BannerController.new);
 	app.post('/cms/banner/new',UserController.signinRequired, UserController.adminRequired,BannerController.saveNew)
 	app.get('/cms/banner/update/:id',UserController.signinRequired, UserController.adminRequired,BannerController.update);
 	// // Category
 	app.get('/cms/category',CategoryController.new);
-  app.post('/cms/category/new',CategoryController.saveNew)
+  	app.post('/cms/category/new',CategoryController.saveNew)
 	app.get('/cms/category/list',CategoryController.list);	
 	app.get('/cms/category/update/:id',CategoryController.update);	
 	//-- Admin  后台数据管理
