@@ -14805,3 +14805,15 @@ Warning: missing space before text for line 2 of jade file "/alidata/node/carher
 [0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.964 ms - 64[0m
 [0mGET /upload/1439080127227.jpeg,http://182.92.183.34:3000/upload/1439080326665.jpeg,http://182.92.183.34:3000/upload/1439080140234.jpeg [33m404 [0m0.970 ms - 142[0m
 [0mGET /assets/libs/jquery-ui/themes/base/jquery-ui.min.css [33m404 [0m0.863 ms - 64[0m
+server is running on: 3000
+
+TypeError: Cannot read property 'cars' of null
+    at EventEmitter.<anonymous> (/alidata/node/carhere/app/controllers/index_controller.js:23:24)
+    at EventEmitter.<anonymous> (/alidata/node/carhere/node_modules/mongoose/node_modules/mpromise/lib/promise.js:175:45)
+    at EventEmitter.emit (events.js:95:17)
+    at Promise.safeEmit (/alidata/node/carhere/node_modules/mongoose/node_modules/mpromise/lib/promise.js:81:21)
+    at Promise.fulfill (/alidata/node/carhere/node_modules/mongoose/node_modules/mpromise/lib/promise.js:94:24)
+    at Promise.resolve (/alidata/node/carhere/node_modules/mongoose/lib/promise.js:113:23)
+    at /alidata/node/carhere/node_modules/mongoose/node_modules/kareem/index.js:177:19
+    at /alidata/node/carhere/node_modules/mongoose/node_modules/kareem/index.js:109:16
+    at process._tickCallback (node.js:415:13)
