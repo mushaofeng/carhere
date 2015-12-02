@@ -58,9 +58,13 @@ CarSchema.statics = {
 		return this.find({}).sort('meta.updateAt').exec(cb);
 	},
 	getCarsById:function  (arr,cb) {
-		// body...
 		return this.find({_id:{$in:arr}}).exec(cb);
 	},	
+	getCarsByTag:function  (arr,cb) {
+		console.log( 'arr',arr );
+		debugger;
+		return this.find({'tag':{$in:arr}}).exec(cb);
+	},		
 	page: function  (start,size,cb) {
 		var s=start||0,
 				n=size||10;

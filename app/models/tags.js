@@ -43,6 +43,9 @@ TagsSchema.statics = {
 		// body...
 		return this.find({_id:{$in:arr}}).exec(cb);
 	},
+	findByName: function(name, cb){
+		return this.findOne({'name': name}).exec(cb);
+	},	
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
 

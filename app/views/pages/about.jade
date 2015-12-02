@@ -1,0 +1,28 @@
+extends ../layout
+include ../includes/mixin
+block head
+  link(href='/build/about.css',rel='stylesheet')
+block content
+  .container.main.clearfix
+    dl.about-us
+      dt 
+        h3 车在这国际贸易有限公司
+      dd 创办于2000年，秉承“让汽车生活更简单”的理念，现已成为中国国内最领先的汽车专业媒体集团，为汽车企业和用户提供立足区域市场的本地化服务支持。
+      dt 
+        h3 联系方式
+      dd.clearfix
+        address.col-md-4
+          strong 李杰
+          br
+          abbr(title="Phone") 12384832
+          br
+          img(src="http://localhost:3000/upload/1439274341089.png" width=200 height=200)
+        address.col-md-4
+          strong 小明
+          br
+          abbr(title="Phone") 64384832
+          br
+          img(src="http://localhost:3000/upload/1439274341089.png" width=200 height=200)            
+      dt 
+        h3 公司地址
+      dd 天津保税区  天保大道18号（消防对面）

@@ -13,10 +13,7 @@ exports.list = function(req,res){
 				site:global.siteInfo,
 				tags:tags
 			})
-
-
 		});
-
 	};
 
 exports.new = function(req,res){

@@ -1,0 +1,13 @@
+extends ../layout
+include ../includes/mixin
+block content
+  .container.page-content
+    ol.breadcrumb
+      li.active 标签 
+      li.active 新车
+    if cars.length
+      each car in cars
+        div.col-md-4
+            +carItem(car) 
+    else
+      .nodata  没有相关数据

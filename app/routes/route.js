@@ -9,6 +9,7 @@ var multiMid = multipart();
 //前台
 var IndexController = require('../controllers/index_controller.js');
 var SiteController = require('../controllers/site_controller.js');
+var Taglist_controller = require('../controllers/taglist_controller.js');
 //CMS
 var RankController = require('../controllers/rank_controller.js');
 var BannerController = require('../controllers/banner_controller.js');
@@ -41,6 +42,14 @@ module.exports = function(app){
 	//#######
 	//-- INDEX  网站页面
 	app.get('/',IndexController.index);
+	app.get('/tag',Taglist_controller.list);
+	app.get('/about.html',function  (req,res) {
+		res.render('about',{
+			title:'关于我们',
+			site:global.siteInfo,
+			nav:'about'
+		});
+	});
 
 	// API 接口
 	app.get('/api/car',CarController.api.car);

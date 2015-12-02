@@ -9,7 +9,6 @@ var Tags = require('../models/tags.js');
 // savePoster Midware
 exports.savePoster = function(req,res,next){
 	var posterData = req.files.uploadPoster;
-	console.log('777777'+JSON.stringify(posterData));
 	var filePath = posterData.path;
 	var originalFilename = posterData.originalFilename;
 	if(originalFilename){
@@ -121,7 +120,6 @@ exports.saveNew = function(req,res){
 			});
 
 		} else {
-			console.log( carObj );
 			_car = new Car(carObj);
 			_car.save(function(err,car){
 				if(err){
@@ -134,7 +132,6 @@ exports.saveNew = function(req,res){
 exports.detail = function(req,res){
 		var id = req.params.id;
 		//pv
-		console.log( id );
 		Car.update({_id:id},{$inc:{pv:1}},function(err){
 			if(err){
 				console.log(err);

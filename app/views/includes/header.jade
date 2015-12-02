@@ -7,16 +7,32 @@ header.topNav
           span.phone #{site.tel}
       nav.navbar(role="navigation")
         ul#menu-main-menu.nav.navbar-nav.pull-right
-          li.menu-item.active
-            a(href="/") 首页
-          li.menu-item
-            a(href="/") 每日交易
-          li.menu-item
-            a(href="/") 库存现车 
-          li.menu-item
-            a(href="/") 全国网点      
-          li.menu-item
-            a(href="/") 联系我们                                            
+          if nav == 'index'      
+            li.menu-item.active
+              a(href="/") 首页                     
+          else   
+            li.menu-item
+              a(href="/") 首页  
+          if nav == 'sell'      
+            li.menu-item.active
+              a(href="/sell.html") 每日交易                     
+          else   
+            li.menu-item
+              a(href="/sell.html") 每日交易   
+          if nav == 'stock'      
+            li.menu-item.active
+              a(href="/stock.html") 库存现车                     
+          else   
+            li.menu-item
+              a(href="/stock.html") 库存现车              
+          //- li.menu-item
+            a(href="/") 全国网点
+          if nav == 'about'      
+            li.menu-item.active
+              a(href="/about.html") 联系我们                     
+          else   
+            li.menu-item
+              a(href="/about.html") 联系我们                                            
   div.header_shadow
 //-.container
   .row

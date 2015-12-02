@@ -36,7 +36,7 @@ block content
         ul.brand-list
           - for brand in brands
             li
-              a(target='_blank', href='www.baidu.com')
+              a(target='_blank', href='/tag?tag=#{brand.name}',title='#{brand.name}')
                 img(src='#{brand.logoUrl}', height='36')        
     .brand-shadow  
   .recent-car
