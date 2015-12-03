@@ -15,9 +15,12 @@ block content
       div.col-sm-10
         input#code.form-control(type="text", name="tags[code]", value=tags.code)
     .form-group
-      label.col-sm-2.control-label(for="order") 序号
+      label.col-sm-2.control-label(for="order") 标签权重
       div.col-sm-10
         input#order.form-control(type="text", name="tags[order]", value=tags.order)
+      label.col-sm-2.control-label
+      div.col-sm-10
+        标签权重值越高首页字体显示越大    
     .form-group
       label.col-sm-2.control-label(for="show") 是否显示
       div.col-sm-10

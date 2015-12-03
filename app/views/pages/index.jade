@@ -4,6 +4,7 @@ block head
   link(href='/build/libs/flexslider.css',rel='stylesheet')  
   link(href='/build/index.css',rel='stylesheet')
 block content
+  #TagCloud(data-tag="#{tagCloud}")
   .flexslider
     ul.slides
       - for item in banner
@@ -115,4 +116,6 @@ block content
                           观看预告片！
 
 block bottom
+
+  script(src="http://cdn.bootcss.com/jqcloud/1.0.4/jqcloud-1.0.4.js")
   script(src="/assets/js/index.js")

@@ -35,42 +35,13 @@ block content
                 span.sr-only Next                                                              
           .col-md-6
             .car-details
-              a(href='single-car.html')
-                h4 #{car.name}
+              h4 #{car.name}
               span ￥#{car.price_off||car.price}万
               .line-dec
-              p #{car.summary}
-              ul.car-info.col-md-6
-                li
-                  span Fabrication:
-                  p 2013/2014
-                li
-                  span Speed:
-                  p 160p/h
-                li
-                  span Mileage:
-                  p 30.000km - 40.000km
-                li
-                  span Fuel:
-                  p Petrol
-              ul.car-info.col-md-6
-                li
-                  span Color:
-                  p Black
-                li
-                  span Transmition:
-                  p Automatic
-                li
-                  span Dors:
-                  p 4/5
-                li
-                  span Engine:
-                  p 2500cm3
+              p.desc #{car.summary}
+                
               .contact-info
                 .row
                   .col-md-6.col-sm-6.col-xs-6
-                    i.fa.fa-phone
-                    span 0038 / 49 - 511 - 868
-                  .col-md-6.col-sm-6.col-xs-6
-                    i.fa.fa-envelope
-                    span youremail@gmail.com
+                    //- i.fa.fa-envelope
+                    h3 销售电话：18750384
