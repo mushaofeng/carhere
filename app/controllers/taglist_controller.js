@@ -9,9 +9,7 @@ var Tags = require('../models/tags.js');
 // savePoster Midware
 exports.list = function(req,res){
 	var tag = req.query.tag;
-	console.log( tag );
 	Tags.findByName(tag,function  (err,tags) {
-		console.log('[tags._id]',tags);
 		if(tags){
 			Car.getCarsByTag([tags._id+""],function(err,cars){
 				if(err){
@@ -23,6 +21,7 @@ exports.list = function(req,res){
 				res.render('tag',{
 					title:'标签 列表',
 					site:global.siteInfo,
+					tag:tag,
 					cars:cars
 				})
 			});

@@ -64,6 +64,7 @@ exports.update = function(req,res){
 			}
 			res.render('admin/brands',{
 				title:'品牌 修改',
+				site:global.siteInfo,
 				brands:brands
 			});
 		});		
