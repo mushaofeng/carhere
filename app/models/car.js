@@ -8,7 +8,7 @@ var CarSchema = new Schema({
 	cover_l:Array,//封面大图
 	tag:Array,//汽车标签
 	type:String,//汽车编号
-	version:String,//汽车版本
+	version:String,//汽车规格
 	color:String,//颜色
 	price:String,//汽车价格
 	price_off:String,//折扣价
