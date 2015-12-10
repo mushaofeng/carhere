@@ -100,7 +100,6 @@ exports.update = function(req,res){
 };				
 
 exports.saveNew = function(req,res){
-		console.log(req.body.car);
 		var id = req.body.car._id;
 		var carObj = req.body.car;
 		var _car;
