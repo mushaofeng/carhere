@@ -1,11 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var ObjectId = Schema.Types.ObjectId;
+var ObjectId = mongoose.Types.ObjectId.createFromHexString;
 
 var UploadSchema = new Schema({
 	name:String,
 	path:String,
-	operator:String,	
+	operator:String,
+	status:{
+		type:String,
+		default:0
+	},//状态 是否		
 	meta:{
 		createAt:{
 			type:Date,
@@ -36,20 +40,22 @@ UploadSchema.pre('save',function(next){
 // statics 
 UploadSchema.statics = {
 	fetch: function(cb){
-		return this.find({}).sort({_id:-1}).exec(cb);
+		return this.find({status : { $ne : '1' }}).sort({_id:-1}).exec(cb);
 
 	},
 	count:function  (cb) {
 		return this.find().count().exec(cb);
 	},
 	delete:function  (id,cb) {
-		console.log('remove333', this.remove({_id: ObjectId(id)}) );
-		return this.remove({_id: ObjectId(id)}).exec(cb);
+		return this.update({name:id}, { status: 1 }).exec(cb);
+		// return  this.remove({_id:ObjectId(id)},function(){
+  //       	console.log( 'remove' );
+  //   	});
 	},
 	page: function  (start,size,cb) {
 		var s=start||0,
 				n=size||10;
-		return this.find({}).sort({_id:-1}).skip(s).limit(n).exec(cb);
+		return this.find({status : { $ne : '1' }}).sort({_id:-1}).skip(s).limit(n).exec(cb);
 	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);

@@ -77,7 +77,13 @@ exports.new = function(req,res){
 // 			})				
 // 		}]
 // 	})
-// };		
+// };	
+exports.delete = function  (req,res,next) {
+	var id = req.query.id;
+	Car.delete(id,function  (err,data) {
+		res.send({err:0});
+	})	
+}	
 exports.update = function(req,res){
 	var id = req.params.id;
 	// console.log(id);

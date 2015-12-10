@@ -24,7 +24,6 @@ exports.saveUpload = function(req,res,next){
 					name:poster
 				})
 				_upload.save(function  (err,upload) {
-					console.log(upload  );
 					res.redirect('/admin/upload');
 				})
 			});
@@ -41,15 +40,8 @@ exports.new = function  (req,res,next) {
 }
 exports.delete = function  (req,res,next) {
 	var id = req.query.id;
-	// console.log( 'delete',id );
-	// res.send(id);
 	Upload.delete(id,function  (err,data) {
-	// 	// body...
-	// console.log( data );
-		res.send('aaaa');
-	// 		// res.render('admin/upload/delete',{
-
-	// 		// })		
+		res.send({err:0});
 	})	
 }
 exports.list=function  (req,res,next) {

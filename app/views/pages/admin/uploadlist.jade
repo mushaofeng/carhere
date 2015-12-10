@@ -14,7 +14,7 @@ block content
           td #{item.path}
           td
             button.btn.btn-primary.clip_board(data-clip=item.path)  复制
-            //- button.btn.btn-primary.btn-upload-delete(data-id=item._id) 删除
+            button.btn.btn-primary.btn-upload-delete(data-id=item.name data-url='/admin/upload/delete?id=') 删除
 
   +pageBlock("/admin/upload/list?",page)
   //-nav

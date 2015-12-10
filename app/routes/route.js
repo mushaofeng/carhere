@@ -80,6 +80,8 @@ module.exports = function(app){
 	app.get('/admin/car',UserController.signinRequired, UserController.adminRequired,CarController.new);
 	app.post('/admin/car/new',UserController.signinRequired, UserController.adminRequired,CarController.saveNew)
 	app.get('/admin/car/update/:id',UserController.signinRequired, UserController.adminRequired,CarController.update);
+	app.get('/admin/car/delete?*',UserController.signinRequired, UserController.adminRequired,CarController.delete);
+
 	// app.delete('/admin/car/list',UserController.signinRequired, UserController.adminRequired,CarController.del);
 
 	// app.get('/api/car',CarController.api.car);	

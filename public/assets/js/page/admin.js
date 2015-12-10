@@ -23,11 +23,15 @@ require(['g'],function  (G) {
 	})
 	// 图片删除
 	$(".btn-upload-delete").on('click',function  (e) {
-		alert($(this).data("id"));
-		var id=$(this).data("id");
+		var el=$(this),
+			id=el.data("id"),
+			url=el.data("url");
 		$.ajax({
-		  url: '/admin/upload/delete?id='+id,
-		  success: function(){
+		  url: url+id,
+		  success: function(res){
+		  	el.closest("tr").remove();
+		  	console.log( res );
+		  	// alert(res)
 		  }
 		});		
 

@@ -17,7 +17,10 @@ var CarSchema = new Schema({
 	year:Number,//出厂年份
 	reserve:Number,//库存
 	summary:String,//概述
-	status:Number,//状态 是否
+	status:{
+		type:String,
+		default:0
+	},//状态 是否
 	operator:String,
 	// pv:{
 	// 	type:Number,
@@ -57,24 +60,27 @@ CarSchema.pre('save',function(next){
 // statics 
 CarSchema.statics = {
 	fetch: function(cb){
-		return this.find({}).sort('meta.updateAt').exec(cb);
+		return this.find({status : { $ne : '1' }}).sort('meta.updateAt').exec(cb);
 	},
 	getCarsById:function  (arr,cb) {
 		return this.find({_id:{$in:arr}}).exec(cb);
 	},	
 	getCarsByTag:function  (arr,cb) {
-		return this.find({'tag':{$in:arr}}).exec(cb);
+		return this.find({'tag':{$in:arr},status : { $ne : '1' }}).exec(cb);
+	},	
+	delete:function  (id,cb) {
+		return this.update({name:id}, { status: 1 }).exec(cb);
 	},		
 	page: function  (start,size,cb) {
 		var s=start||0,
 				n=size||10;
-		return this.find({}).sort({_id:-1}).skip(s).limit(n).exec(cb);
+		return this.find({status : { $ne : '1' }}).sort({_id:-1}).skip(s).limit(n).exec(cb);
 	},
 	top: function(cb){
-		return this.find({}).sort('meta.updateAt').limit(5).exec(cb);
+		return this.find({status : { $ne : '1' }}).sort('meta.updateAt').limit(5).exec(cb);
 	},	
 	search:function  (s,cb) {
-		return this.find({'name':eval('/'+s+'/')}).exec(cb);
+		return this.find({'name':eval('/'+s+'/'),status : { $ne : 0 }}).exec(cb);
 	},
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
