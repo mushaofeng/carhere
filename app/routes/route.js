@@ -87,6 +87,8 @@ module.exports = function(app){
 	app.get('/admin/upload',UserController.signinRequired, UserController.adminRequired,UploadController.new);
 	app.get('/admin/upload/list',UserController.signinRequired, UserController.adminRequired,UploadController.list);
 	app.post('/admin/upload/new',UserController.signinRequired, UserController.adminRequired,UploadController.saveUpload);
+	app.get('/admin/upload/delete?*',UserController.signinRequired, UserController.adminRequired,UploadController.delete);
+
 	// //-- USER  
 	app.post('/user/signup',UserController.signup);
 	app.post('/user/signin',UserController.signin);

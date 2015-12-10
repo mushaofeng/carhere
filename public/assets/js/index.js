@@ -10,12 +10,12 @@ require(['g','libs/jquery.flexslider'], function(G,Slider) {
 	})	
 
 	
-	var tag = $("#TagCloud").data('tag'),word_array=[];
+	var tag = $('#TagCloud').data('tag'),word_array=[];
 	for(var i=0;i<tag.length;i++){
 		var o ={
 			text:tag[i].name,
 			weight:15-i,
-			link:"http://"+location.host+"/tag?tag="+tag[i].name
+			link:'http://'+location.host+'/tag?tag='+tag[i].name
 		}
 		word_array.push(o)
 	}

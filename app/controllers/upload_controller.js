@@ -39,6 +39,19 @@ exports.new = function  (req,res,next) {
 		site:global.siteInfo
 	});	
 }
+exports.delete = function  (req,res,next) {
+	var id = req.query.id;
+	// console.log( 'delete',id );
+	// res.send(id);
+	Upload.delete(id,function  (err,data) {
+	// 	// body...
+	// console.log( data );
+		res.send('aaaa');
+	// 		// res.render('admin/upload/delete',{
+
+	// 		// })		
+	})	
+}
 exports.list=function  (req,res,next) {
 	var start = req.query.start||1,
 			size = req.query.size||10;

@@ -36,7 +36,11 @@ block content
           .col-md-6
             .car-details
               h4 #{car.name}
-              span ￥#{car.price_off||car.price}万
+                em.ml10 编号#{car.type} 
+              em ￥#{car.price}万
+              div 
+                span #{car.version}   
+                span.ml10 #{car.color}
               .line-dec
               p.desc #{car.summary}
                 

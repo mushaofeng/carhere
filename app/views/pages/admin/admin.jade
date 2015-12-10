@@ -44,22 +44,22 @@ block content
       div.col-sm-10
         input#price.form-control(type="price", name="car[price]", value=car.price,placeholder='价格单位万')
     .form-group
-      label.col-sm-2.control-label(for="price_off") 折扣价
+      label.col-sm-2.control-label(for="color") 颜色
       div.col-sm-10
-        input#price_off.form-control(type="text", name="car[price_off]", value=car.price_off,placeholder='价格单位万')
+        input#price_off.form-control(type="text", name="car[color]", value=car.color)
     .form-group
-      label.col-sm-2.control-label(for="price_4s") 4S店价格
+      label.col-sm-2.control-label(for="version") 版本
       div.col-sm-10
-        input#price_4s.form-control(type="text", name="car[price_4s]", value=car.price_4s,placeholder='价格单位万')
-    .form-group
+        input#price_4s.form-control(type="text", name="car[version]", value=car.version,placeholder='美规汽油')
+    //- .form-group
       label.col-sm-2.control-label(for="sell_num") 售卖数量
       div.col-sm-10
         input#sell_num.form-control(type="text", name="car[sell_num]", value=car.sell_num)
-    .form-group
+    //- .form-group
       label.col-sm-2.control-label(for="reserve") 库存数
       div.col-sm-10
         input#reserve.form-control(type="text", name="car[reserve]", value=car.reserve)               
-    .form-group
+    //- .form-group
       label.col-sm-2.control-label(for="year") 生产年份
       div.col-sm-10
         input#year.form-control(type="text", name="car[year]", value=car.year,placeholder='整数')              

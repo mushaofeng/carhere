@@ -7,7 +7,9 @@ var CarSchema = new Schema({
 	cover:String,//封面地址
 	cover_l:Array,//封面大图
 	tag:Array,//汽车标签
-	type:String,//汽车型号
+	type:String,//汽车编号
+	version:String,//汽车版本
+	color:String,//颜色
 	price:String,//汽车价格
 	price_off:String,//折扣价
 	price_4s:String,//4s价格
@@ -61,8 +63,6 @@ CarSchema.statics = {
 		return this.find({_id:{$in:arr}}).exec(cb);
 	},	
 	getCarsByTag:function  (arr,cb) {
-		console.log( 'arr',arr );
-		debugger;
 		return this.find({'tag':{$in:arr}}).exec(cb);
 	},		
 	page: function  (start,size,cb) {

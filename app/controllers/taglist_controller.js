@@ -15,9 +15,6 @@ exports.list = function(req,res){
 				if(err){
 					console.log(err);
 				}
-				console.log( cars );
-				debugger;
-
 				res.render('tag',{
 					title:'标签 列表',
 					site:global.siteInfo,

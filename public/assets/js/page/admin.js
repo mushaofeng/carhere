@@ -19,10 +19,19 @@ require(['g'],function  (G) {
 	})	
 	$(".tag_submit").on('click',function  () {
 		$selEl=$("#tagModal .modal-body").find('.label-success')
-		console.log( $selEl );
 		$("#tag-content").append($selEl);
 	})
+	// 图片删除
+	$(".btn-upload-delete").on('click',function  (e) {
+		alert($(this).data("id"));
+		var id=$(this).data("id");
+		$.ajax({
+		  url: '/admin/upload/delete?id='+id,
+		  success: function(){
+		  }
+		});		
 
+	})
 
 
 	// 汽车列表
