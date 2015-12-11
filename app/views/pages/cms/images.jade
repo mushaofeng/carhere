@@ -1,0 +1,39 @@
+extends ../../layout_cms
+include ../../includes/mixin
+block content
+
+  form.form-horizontal(method="post",action="/cms/images/new",enctype="application/x-www-form-urlencoded")
+    //- hiden input??? pass the value
+    if images._id
+      input(type="hidden", name="images[_id]", value=images._id)
+
+    .form-group
+      label.col-sm-2.control-label(for="name") 分类名称
+      div.col-sm-10
+        input#name.form-control(type="text", name="images[name]", value=images.name,placeholder='必填')
+    .form-group
+      label.col-sm-2.control-label(for="code") 分类编码
+      div.col-sm-10
+        input#code.form-control(type="text", name="images[code]", value=images.code)                 
+    .form-group
+      label.col-sm-2.control-label(for="src") 
+        a(href="/admin/upload/list",target="_blank") 图片地址    
+        a.add_input(href="#",title="添加图片地址"): span.glyphicon.glyphicon-plus
+      div.col-sm-10
+        if images.src
+          -each item in images.src
+            input#src.form-control(type="text", name="images[src]", value=item,placeholder='560*365像素')                
+        else
+          input#src.form-control(type="text", name="images[src]", value=images.src,placeholder='560*365像素')                           
+    .form-group
+      label.col-sm-2.control-label(for="desc") 描述
+      div.col-sm-10
+        input#type.form-control(type="text", name="images[desc]", value=images.desc)              
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 录入
+block bottom
+  script(src="/assets/js/page/admin.js")
+
+
+
