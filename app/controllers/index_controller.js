@@ -4,6 +4,7 @@ var Banner = require('../models/banner.js');
 var Brands = require('../models/brands.js');
 var Rank = require('../models/rank.js')
 var Tag = require('../models/tags.js')
+var Images = require('../models/images.js')
 //-- index
 exports.index = function(req,res){
 	// new_car hot_car
@@ -15,21 +16,25 @@ exports.index = function(req,res){
 						Rank.fetch(function  (err,rank) {
 							Tag.fetchTag(function  (err,tags) {
 								// body...
-								console.log(JSON.stringify(tags) );
-								if(err){
-									console.log(err);
-								}
-								res.render('index',{
-									title:'首页',
-									nav:'index',
-									site:global.siteInfo,
-									banner:banner,
-									brands:brands,
-									newCar:new_car.cars,
-									hotCar:hot_car.cars,
-									unsaleCar:hot_car.cars,
-									rank:rank,
-									tagCloud:JSON.stringify(tags)
+								Images.fetch(function  (err,images) {
+									// body...
+									console.log('images', images );
+									if(err){
+										console.log(err);
+									}
+									res.render('index',{
+										title:'首页',
+										nav:'index',
+										site:global.siteInfo,
+										banner:banner,
+										brands:brands,
+										newCar:new_car.cars,
+										hotCar:hot_car.cars,
+										unsaleCar:hot_car.cars,
+										rank:rank,
+										imagelist:images,
+										tagCloud:JSON.stringify(tags)
+									})									
 								})									
 							})
 						})

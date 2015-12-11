@@ -46,7 +46,7 @@ block content
         dl.col-md-4
           dt
             h2.heading
-              span 最新车
+              span 最新车11
           - each car,index in newCar
             dd
               +carItem(car) 
@@ -63,34 +63,21 @@ block content
               span 特价车
           - each car,index in unsaleCar
             dd
-              +carItem(car)                             
-  //- .top-wrap
-    .container
-      .row
-        .span8.offset2
+              +carItem(car) 
+  - each images,index in imagelist                                  
+    .image-wrap
+      .container
+        .row
           .section-header
-            .animated.bounceInRight.logo-car
-              img(src='/assets/images/logo/logo-sub1.png')
             .heading-wrap
               h2.heading
-                span 销售排行
-      .row
-        .col-xs-12.col-sm-6.col-lg-6
-          article
-            ul.nav.nav-tabs
-              - each car , index  in hotCar
-                li
-                  a(href='#tab#{index}', data-toggle='tab', aria-expanded='false')
-                    i.rank-num #{index+1}
-                    strong #{car.name}
-                    | #{car.summary}
+                span #{images.name}
+        .row
+          - each image , index  in images.src
+            .col-md-4
+              img(src=image)
+
                
-        .tab-content.col-xs-12.col-sm-6.col-lg-6
-          - each car,index in hotCar
-            .tab-pane(id='tab#{index}')
-              article.clearfix.animated.text-left.animation-done
-                a(href='/car/#{car._id}', target='_blank')
-                  img.img-responsive(src='#{car.cover_l}')
 
   //-.container
     .row
