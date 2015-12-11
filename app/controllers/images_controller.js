@@ -1,4 +1,7 @@
 var Images = require('../models/images.js');
+var _=require('underscore');
+
+
 exports.list = function(req,res){
 	Images.fetch(function(err,list){
 		if(err){
