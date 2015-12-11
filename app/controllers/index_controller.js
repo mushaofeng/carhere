@@ -15,10 +15,7 @@ exports.index = function(req,res){
 					Category.getCategoryCars('unsale_car',function  (err,unsale_car) {
 						Rank.fetch(function  (err,rank) {
 							Tag.fetchTag(function  (err,tags) {
-								// body...
 								Images.fetch(function  (err,images) {
-									// body...
-									console.log('images', images );
 									if(err){
 										console.log(err);
 									}
