@@ -22,7 +22,7 @@ require(['g'],function  (G) {
 		$("#tag-content").append($selEl);
 	})
 	// 图片删除
-	$(".btn-upload-delete").on('click',function  (e) {
+	$(".btn-delete").on('click',function  (e) {
 		var el=$(this),
 			id=el.data("id"),
 			url=el.data("url");

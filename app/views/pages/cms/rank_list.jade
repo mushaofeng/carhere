@@ -7,6 +7,7 @@ block content
         th 团队名称
         th 销售数据
         th 修改
+        th 删除
     tbody
       each item,index in rank
         tr
@@ -15,3 +16,7 @@ block content
           td #{item.num}
           td
             a(target="_blank",href="/cms/rank/update/#{item._id}") 修改            
+          td
+            a.btn-delete(data-id=item.name data-url='/cms/rank/delete?name=') 删除
+block bottom
+  script(src="/assets/js/page/admin.js")            

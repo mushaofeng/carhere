@@ -34,32 +34,6 @@ header.topNav
             li.menu-item
               a(href="/about.html") 联系我们                                            
   div.header_shadow
-//-.container
-  .row
-    .page-header.clearfix
-      h1= title
-      //- .col-md-4
-      //-   small 永远的Friends
-      //- .col-md-8
-      //-   form(method="GET",action="/results")
-      //-     .input-group.col-sm-4.pull-right
-      //-       input.form-control(type="text",name='q')
-      //-       span.input-group-btn
-      //-         button.btn.btn-default(type='submit') search
-//-.navbar.navbar-default.navbar-fixed-bottom
-  .container
-    .navbar-header
-      a.navbar-brand(href="/") 经典Friends
-    if user
-      p.navbar-text.navbar-right
-        span Welcome #{user.name}
-        span &nbsp; | &nbsp;
-        a.navbar-link(href="/logout") 登出
-    else
-      p.navbar-text.navbar-right
-        a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
-        span &nbsp; | &nbsp;
-        a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
 #signupModal.modal.fade
   .modal-dialog  
     .modal-content

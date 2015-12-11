@@ -39,8 +39,8 @@ exports.new = function  (req,res,next) {
 	});	
 }
 exports.delete = function  (req,res,next) {
-	var id = req.query.id;
-	Upload.delete(id,function  (err,data) {
+	var name = req.query.name;
+	Upload.delete(name,function  (err,data) {
 		res.send({err:0});
 	})	
 }

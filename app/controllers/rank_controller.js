@@ -60,10 +60,12 @@ exports.update = function(req,res){
 		});
 	});		
 };
-
-
-
-
+exports.delete = function  (req,res,next) {
+	var name = req.query.name;
+	Rank.delete(name,function  (err,data) {
+		res.send({err:0});
+	})	
+}
 
 
 

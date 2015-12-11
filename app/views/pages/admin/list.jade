@@ -6,21 +6,20 @@ block content
             th 汽车名
             th 汽车型号
             th 售卖价格
-            th 售卖数量
             th 查看
             th 更新
-            //- th 删除
+            th 删除
         tbody
           each item in cars
             tr(class="item-id-#{item._id}")
               td #{item.name}
               td #{item.type}
               td #{item.price}
-              td #{item.sell_num}
               td: a(target="_blank",href="/car/#{item._id}") 查看
               td
                 a(target="_blank",href="/admin/car/update/#{item._id}") 修改 &nbsp;&nbsp;
-                a.btn-upload-delete(data-id=item.name data-url='/admin/car/delete?id=') 删除
+              td
+                a.btn-delete(data-id=item.name data-url='/admin/car/delete?name=') 删除
               //- td
                 button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
 block bottom

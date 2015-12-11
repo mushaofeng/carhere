@@ -46,11 +46,8 @@ UploadSchema.statics = {
 	count:function  (cb) {
 		return this.find().count().exec(cb);
 	},
-	delete:function  (id,cb) {
-		return this.update({name:id}, { status: 1 }).exec(cb);
-		// return  this.remove({_id:ObjectId(id)},function(){
-  //       	console.log( 'remove' );
-  //   	});
+	delete:function  (name,cb) {
+		return this.update({name:name}, { status: 1 }).exec(cb);
 	},
 	page: function  (start,size,cb) {
 		var s=start||0,

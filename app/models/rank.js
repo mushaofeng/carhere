@@ -4,6 +4,10 @@ var ObjectId = Schema.Types.ObjectId;
 var RankSchema = new Schema({
 	name:String,//名称
 	num:Number,//销售数量
+	status:{
+		type:String,
+		default:0
+	},//状态 是否	
 	meta:{
 		createAt:{
 			type:Date,
@@ -34,9 +38,11 @@ RankSchema.pre('save',function(next){
 // statics 
 RankSchema.statics = {
 	fetch: function(cb){
-		return this.find({}).sort({num:-1}).exec(cb);
+		return this.find({status:{$ne:'1'}}).sort({num:-1}).exec(cb);
+	},
+	delete:function  (name,cb) {
+		return this.update({name:name}, { status: 1 }).exec(cb);
 	}
-
 };
 
 module.exports = mongoose.model('Rank',RankSchema);

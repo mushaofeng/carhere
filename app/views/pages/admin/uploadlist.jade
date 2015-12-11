@@ -7,6 +7,7 @@ block content
         th 图片
         th 文件名
         th 复制地址
+        th 删除
     tbody
       each item in uploads
         tr(class="item-id-#{item._id}")
@@ -14,7 +15,8 @@ block content
           td #{item.path}
           td
             button.btn.btn-primary.clip_board(data-clip=item.path)  复制
-            button.btn.btn-primary.btn-upload-delete(data-id=item.name data-url='/admin/upload/delete?id=') 删除
+          td
+            button.btn.btn-primary.btn-delete(data-id=item.name data-url='/admin/upload/delete?name=') 删除
 
   +pageBlock("/admin/upload/list?",page)
   //-nav

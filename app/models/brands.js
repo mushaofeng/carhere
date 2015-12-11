@@ -6,7 +6,11 @@ var BrandsSchema = new Schema({
 	code:String,//编码
 	logoUrl:String,//logo 图片地址
 	order:Number,//排序
-	operator:String,	
+	operator:String,
+	status:{
+		type:String,
+		default:0
+	},//状态 是否		
 	meta:{
 		createAt:{
 			type:Date,
@@ -37,8 +41,11 @@ BrandsSchema.pre('save',function(next){
 // statics 
 BrandsSchema.statics = {
 	fetch: function(cb){
-		return this.find({}).sort('meta.updateAt').exec(cb);
+		return this.find({status:{$ne:'1'}}).sort('meta.updateAt').exec(cb);
 	},
+	delete:function  (name,cb) {
+		return this.update({name:name}, { status: 1 }).exec(cb);
+	},		
 	findById: function(id, cb){
 		return this.findOne({_id: id}).exec(cb);
 

@@ -79,8 +79,8 @@ exports.new = function(req,res){
 // 	})
 // };	
 exports.delete = function  (req,res,next) {
-	var id = req.query.id;
-	Car.delete(id,function  (err,data) {
+	var name = req.query.name;
+	Car.delete(name,function  (err,data) {
 		res.send({err:0});
 	})	
 }	

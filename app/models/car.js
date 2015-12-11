@@ -60,7 +60,7 @@ CarSchema.pre('save',function(next){
 // statics 
 CarSchema.statics = {
 	fetch: function(cb){
-		return this.find({status : { $ne : '1' }}).sort('meta.updateAt').exec(cb);
+		return this.find({status:{$ne:'1'}}).sort('meta.updateAt').exec(cb);
 	},
 	getCarsById:function  (arr,cb) {
 		return this.find({_id:{$in:arr}}).exec(cb);
@@ -68,8 +68,8 @@ CarSchema.statics = {
 	getCarsByTag:function  (arr,cb) {
 		return this.find({'tag':{$in:arr},status : { $ne : '1' }}).exec(cb);
 	},	
-	delete:function  (id,cb) {
-		return this.update({name:id}, { status: 1 }).exec(cb);
+	delete:function  (name,cb) {
+		return this.update({name:name}, { status: 1 }).exec(cb);
 	},		
 	page: function  (start,size,cb) {
 		var s=start||0,

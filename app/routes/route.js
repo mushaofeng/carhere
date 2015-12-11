@@ -61,6 +61,7 @@ module.exports = function(app){
 	app.get('/cms/rank',UserController.signinRequired, UserController.adminRequired,RankController.new);
 	app.post('/cms/rank/new',UserController.signinRequired, UserController.adminRequired,RankController.saveNew)
 	app.get('/cms/rank/update/:id',UserController.signinRequired, UserController.adminRequired,RankController.update);
+	app.get('/cms/rank/delete?*',UserController.signinRequired, UserController.adminRequired,RankController.delete);
 
 
 
@@ -112,6 +113,7 @@ module.exports = function(app){
 	app.get('/admin/brands',UserController.signinRequired, UserController.adminRequired,BrandsController.new);
 	app.post('/admin/brands/new',UserController.signinRequired, UserController.adminRequired,BrandsController.saveNew)
 	app.get('/admin/brands/update/:id',UserController.signinRequired, UserController.adminRequired,BrandsController.update);
+	app.get('/admin/brands/delete?*',UserController.signinRequired, UserController.adminRequired,BrandsController.delete);
 	
 	// 标签 
 	app.get('/admin/tags/list',UserController.signinRequired, UserController.adminRequired,TagsController.list);
