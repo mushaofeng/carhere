@@ -3,7 +3,8 @@ include ../includes/mixin
 block content
   .container.page-content
     ol.breadcrumb
-      li.active 标签 
+      li.active 
+        a(href="/") 首页 
       li.active #{tag}
     if cars.length
       each car in cars
